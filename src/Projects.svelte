@@ -5,8 +5,16 @@
       name: "FurDB",
       pageLink: null,
       sourceCodeLink: "https://github.com/madhavan-raja/furtail-python",
-      liveDemoLink: "A",
+      liveDemoLink: null,
       description: "A Database Management System",
+    },
+    {
+      name: "Ligh",
+      pageLink: null,
+      sourceCodeLink: "https://github.com/madhavan-raja/ligh",
+      liveDemoLink: null,
+      description:
+        "A full-stack blog website wrien in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS",
     },
   ];
 </script>
