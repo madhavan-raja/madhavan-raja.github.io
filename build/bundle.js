@@ -1590,11 +1590,11 @@ var app = (function () {
     			}
 
     			attr_dev(h2, "class", "text-3xl text-gray-300");
-    			add_location(h2, file$5, 23, 4, 581);
+    			add_location(h2, file$5, 23, 4, 576);
     			attr_dev(div0, "class", "space-y-4");
-    			add_location(div0, file$5, 25, 4, 652);
+    			add_location(div0, file$5, 25, 4, 647);
     			attr_dev(div1, "class", "space-y-5");
-    			add_location(div1, file$5, 22, 2, 552);
+    			add_location(div1, file$5, 22, 2, 547);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1779,7 +1779,7 @@ var app = (function () {
     			username: "flipped_flop",
     			link: "https://www.codechef.com/users/flipped_flop",
     			rating: 1862,
-    			ratingDescription: "4 stars"
+    			ratingDescription: "4★"
     		},
     		{
     			name: "Codeforces",
