@@ -7,7 +7,7 @@
       username: "flipped_flop",
       link: "https://www.codechef.com/users/flipped_flop",
       rating: 1862,
-      ratingDescription: "4 stars",
+      ratingDescription: "4★",
     },
     {
       name: "Codeforces",
