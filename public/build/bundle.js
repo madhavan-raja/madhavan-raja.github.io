@@ -2713,7 +2713,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (63:2) {#each officialContacts as contact}
+    // (62:2) {#each officialContacts as contact}
     function create_each_block_1(ctx) {
     	let contactcard;
     	let current;
@@ -2754,14 +2754,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(63:2) {#each officialContacts as contact}",
+    		source: "(62:2) {#each officialContacts as contact}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (73:2) {#each unofficialContacts as contact}
+    // (72:2) {#each unofficialContacts as contact}
     function create_each_block(ctx) {
     	let contactcard;
     	let current;
@@ -2802,7 +2802,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(73:2) {#each unofficialContacts as contact}",
+    		source: "(72:2) {#each unofficialContacts as contact}",
     		ctx
     	});
 
@@ -2857,9 +2857,9 @@ var app = (function () {
     			}
 
     			attr_dev(span, "class", "text-gray-300");
-    			add_location(span, file$1, 70, 2, 7455);
+    			add_location(span, file$1, 69, 2, 7547);
     			attr_dev(div, "class", "flex flex-col sm:flex-row items-center justify-center space-x-0 space-y-4 sm:space-x-4 sm:space-y-0");
-    			add_location(div, file$1, 59, 0, 7172);
+    			add_location(div, file$1, 58, 0, 7264);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2993,8 +2993,7 @@ var app = (function () {
     			name: "Email",
     			link: "mailto:madhavanraja99@gmail.com",
     			paths: [
-    				"M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z",
-    				"M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+    				"M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
     			]
     		},
     		{
