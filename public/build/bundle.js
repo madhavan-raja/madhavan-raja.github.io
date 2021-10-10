@@ -3119,9 +3119,10 @@ var app = (function () {
     			t3 = space();
     			create_component(contacts.$$.fragment);
     			attr_dev(div0, "class", "py-10 flex flex-col space-y-10");
-    			add_location(div0, file, 10, 4, 327);
+    			add_location(div0, file, 10, 4, 347);
     			attr_dev(div1, "class", "px-8 sm:px-20 md:px-40 lg:px-80");
-    			add_location(div1, file, 9, 2, 277);
+    			add_location(div1, file, 9, 2, 297);
+    			attr_dev(main, "class", "bg-gray-900");
     			add_location(main, file, 8, 0, 268);
     		},
     		l: function claim(nodes) {
