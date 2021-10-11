@@ -3,7 +3,7 @@ module.exports = {
     purgeLayersByDefault: true,
     removeDeprecatedGapUtilities: true,
   },
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {},
   },

@@ -1,4 +1,5 @@
 <script>
+  import DarkModeToggle from "./DarkModeToggle.svelte";
   import Info from "./Info.svelte";
   import Publications from "./Publications.svelte";
   import CompetitiveProgramming from "./CompetitiveProgramming.svelte";
@@ -8,6 +9,7 @@
 
 <main class="bg-gray-200 dark:bg-gray-900">
   <div class="px-8 sm:px-20 md:px-40 lg:px-80">
+    <DarkModeToggle />
     <div class="py-10 flex flex-col space-y-10">
       <Info />
       <Publications />
