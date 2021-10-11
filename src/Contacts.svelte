@@ -67,7 +67,7 @@
     />
   {/each}
 
-  <span class="text-gray-300">&bull;</span>
+  <span class="text-gray-900 dark:text-gray-300">&bull;</span>
 
   {#each unofficialContacts as contact}
     <ContactCard

@@ -11,10 +11,10 @@
 <div>
   <ItemHeading name={platformName} />
 
-  <a class="text-sm font-mono text-gray-300 text-blue-500" href={link}
+  <a class="text-sm font-mono text-blue-700 dark:text-blue-500" href={link}
     >{username}</a
   >
-  <span class="text-sm text-gray-400"
+  <span class="text-sm text-gray-700 dark:text-gray-400"
     >&bull; {rating} ({ratingDescription})</span
   >
 </div>

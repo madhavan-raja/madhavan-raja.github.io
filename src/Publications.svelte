@@ -17,7 +17,9 @@
 
 {#if publications.length > 0}
   <div class="space-y-5">
-    <h2 class="text-3xl text-gray-300">Research Publications</h2>
+    <h2 class="text-3xl text-gray-900 dark:text-gray-300">
+      Research Publications
+    </h2>
 
     <div class="space-y-4">
       {#each publications as publication}

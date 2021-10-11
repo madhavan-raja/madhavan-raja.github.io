@@ -21,7 +21,7 @@
 
 {#if projects.length > 0}
   <div class="space-y-5">
-    <h2 class="text-3xl text-gray-300">Projects</h2>
+    <h2 class="text-3xl text-gray-900 dark:text-gray-300">Projects</h2>
 
     <div class="space-y-4">
       {#each projects as project}

@@ -21,7 +21,9 @@
 
 {#if platforms.length > 0}
   <div class="space-y-5">
-    <h2 class="text-3xl text-gray-300">Competitive Programming</h2>
+    <h2 class="text-3xl text-gray-900 dark:text-gray-300">
+      Competitive Programming
+    </h2>
 
     <div class="space-y-4">
       {#each platforms as platform}
