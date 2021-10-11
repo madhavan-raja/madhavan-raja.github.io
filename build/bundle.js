@@ -397,10 +397,10 @@ var app = (function () {
     			t1 = space();
     			p = element("p");
     			p.textContent = `${/*about*/ ctx[1]}`;
-    			attr_dev(h1, "class", "text-4xl text-center text-gray-300");
+    			attr_dev(h1, "class", "text-4xl text-center text-gray-900 dark:text-gray-300");
     			add_location(h1, file$a, 7, 2, 255);
-    			attr_dev(p, "class", "text-gray-300 leading-tight text-justify");
-    			add_location(p, file$a, 8, 2, 317);
+    			attr_dev(p, "class", "text-gray-900 dark:text-gray-300 leading-tight text-justify");
+    			add_location(p, file$a, 8, 2, 336);
     			attr_dev(div, "class", "space-y-5");
     			add_location(div, file$a, 6, 0, 228);
     		},
@@ -483,7 +483,7 @@ var app = (function () {
     		c: function create() {
     			h3 = element("h3");
     			t = text(/*name*/ ctx[0]);
-    			attr_dev(h3, "class", "text-sm sm:text-lg leading-none sm:leading-none font-semibold text-gray-300");
+    			attr_dev(h3, "class", "text-sm sm:text-lg leading-none sm:leading-none font-semibold text-gray-900 dark:text-gray-300");
     			add_location(h3, file$9, 4, 0, 43);
     		},
     		l: function claim(nodes) {
@@ -597,7 +597,7 @@ var app = (function () {
     			div = element("div");
     			if_block.c();
     			attr_dev(div, "class", "mt-2 flex space-x-4");
-    			add_location(div, file$8, 21, 6, 507);
+    			add_location(div, file$8, 21, 6, 555);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -633,7 +633,7 @@ var app = (function () {
     	return block;
     }
 
-    // (25:8) {:else}
+    // (27:8) {:else}
     function create_else_block(ctx) {
     	let each_1_anchor;
     	let each_value = /*links*/ ctx[4];
@@ -694,7 +694,7 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(25:8) {:else}",
+    		source: "(27:8) {:else}",
     		ctx
     	});
 
@@ -712,10 +712,10 @@ var app = (function () {
     			a = element("a");
     			span = element("span");
     			span.textContent = "Link";
-    			attr_dev(span, "class", "text-blue-500");
-    			add_location(span, file$8, 23, 29, 605);
+    			attr_dev(span, "class", "text-blue-700 dark:text-blue-500");
+    			add_location(span, file$8, 24, 13, 667);
     			attr_dev(a, "href", a_href_value = /*links*/ ctx[4][0]);
-    			add_location(a, file$8, 23, 10, 586);
+    			add_location(a, file$8, 23, 10, 634);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -742,7 +742,7 @@ var app = (function () {
     	return block;
     }
 
-    // (26:10) {#each links as link, i}
+    // (28:10) {#each links as link, i}
     function create_each_block$5(ctx) {
     	let a;
     	let span;
@@ -757,10 +757,10 @@ var app = (function () {
     			span = element("span");
     			t0 = text("Part ");
     			t1 = text(t1_value);
-    			attr_dev(span, "class", "text-blue-500");
-    			add_location(span, file$8, 26, 27, 730);
+    			attr_dev(span, "class", "text-blue-700 dark:text-blue-500");
+    			add_location(span, file$8, 29, 15, 839);
     			attr_dev(a, "href", a_href_value = /*link*/ ctx[5]);
-    			add_location(a, file$8, 26, 12, 715);
+    			add_location(a, file$8, 28, 12, 808);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -782,7 +782,7 @@ var app = (function () {
     		block,
     		id: create_each_block$5.name,
     		type: "each",
-    		source: "(26:10) {#each links as link, i}",
+    		source: "(28:10) {#each links as link, i}",
     		ctx
     	});
 
@@ -829,17 +829,17 @@ var app = (function () {
     			t4 = text(/*journal*/ ctx[2]);
     			t5 = space();
     			if (if_block) if_block.c();
-    			attr_dev(img, "class", "h-36");
+    			attr_dev(img, "class", "h-36 shadow-xl");
     			attr_dev(img, "alt", /*journal*/ ctx[2]);
     			if (!src_url_equal(img.src, img_src_value = /*cover*/ ctx[3])) attr_dev(img, "src", img_src_value);
     			add_location(img, file$8, 11, 2, 216);
-    			attr_dev(p0, "class", "text-sm text-gray-300");
-    			add_location(p0, file$8, 15, 6, 341);
-    			attr_dev(p1, "class", "text-sm text-gray-400");
-    			add_location(p1, file$8, 18, 6, 413);
-    			add_location(div0, file$8, 14, 4, 328);
+    			attr_dev(p0, "class", "text-sm text-gray-900 dark:text-gray-300");
+    			add_location(p0, file$8, 15, 6, 351);
+    			attr_dev(p1, "class", "text-sm text-gray-800 dark:text-gray-400");
+    			add_location(p1, file$8, 18, 6, 442);
+    			add_location(div0, file$8, 14, 4, 338);
     			attr_dev(div1, "class", "py-2 space-y-2");
-    			add_location(div1, file$8, 12, 2, 266);
+    			add_location(div1, file$8, 12, 2, 276);
     			attr_dev(div2, "class", "flex space-x-2");
     			add_location(div2, file$8, 10, 0, 184);
     		},
@@ -1088,10 +1088,10 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h2, "class", "text-3xl text-gray-300");
+    			attr_dev(h2, "class", "text-3xl text-gray-900 dark:text-gray-300");
     			add_location(h2, file$7, 19, 4, 670);
     			attr_dev(div0, "class", "space-y-4");
-    			add_location(div0, file$7, 21, 4, 739);
+    			add_location(div0, file$7, 23, 4, 772);
     			attr_dev(div1, "class", "space-y-5");
     			add_location(div1, file$7, 18, 2, 641);
     		},
@@ -1171,7 +1171,7 @@ var app = (function () {
     	return block;
     }
 
-    // (23:6) {#each publications as publication}
+    // (25:6) {#each publications as publication}
     function create_each_block$4(ctx) {
     	let publicationscard;
     	let current;
@@ -1214,7 +1214,7 @@ var app = (function () {
     		block,
     		id: create_each_block$4.name,
     		type: "each",
-    		source: "(23:6) {#each publications as publication}",
+    		source: "(25:6) {#each publications as publication}",
     		ctx
     	});
 
@@ -1355,11 +1355,11 @@ var app = (function () {
     			t5 = text(" (");
     			t6 = text(/*ratingDescription*/ ctx[4]);
     			t7 = text(")");
-    			attr_dev(a, "class", "text-sm font-mono text-gray-300 text-blue-500");
+    			attr_dev(a, "class", "text-sm font-mono text-blue-700 dark:text-blue-500");
     			attr_dev(a, "href", /*link*/ ctx[1]);
     			add_location(a, file$6, 13, 2, 253);
-    			attr_dev(span, "class", "text-sm text-gray-400");
-    			add_location(span, file$6, 16, 2, 350);
+    			attr_dev(span, "class", "text-sm text-gray-700 dark:text-gray-400");
+    			add_location(span, file$6, 16, 2, 355);
     			add_location(div, file$6, 10, 0, 203);
     		},
     		l: function claim(nodes) {
@@ -1589,10 +1589,10 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h2, "class", "text-3xl text-gray-300");
+    			attr_dev(h2, "class", "text-3xl text-gray-900 dark:text-gray-300");
     			add_location(h2, file$5, 23, 4, 576);
     			attr_dev(div0, "class", "space-y-4");
-    			add_location(div0, file$5, 25, 4, 647);
+    			add_location(div0, file$5, 27, 4, 680);
     			attr_dev(div1, "class", "space-y-5");
     			add_location(div1, file$5, 22, 2, 547);
     		},
@@ -1672,7 +1672,7 @@ var app = (function () {
     	return block;
     }
 
-    // (27:6) {#each platforms as platform}
+    // (29:6) {#each platforms as platform}
     function create_each_block$3(ctx) {
     	let competitiveprogrammingcard;
     	let current;
@@ -1715,7 +1715,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(27:6) {#each platforms as platform}",
+    		source: "(29:6) {#each platforms as platform}",
     		ctx
     	});
 
@@ -1835,7 +1835,7 @@ var app = (function () {
     		c: function create() {
     			a = element("a");
     			t = text("Page");
-    			attr_dev(a, "class", "text-sm text-gray-300 text-blue-500");
+    			attr_dev(a, "class", "text-sm text-blue-700 dark:text-blue-500");
     			attr_dev(a, "href", /*pageLink*/ ctx[1]);
     			add_location(a, file$4, 11, 4, 232);
     		},
@@ -1873,9 +1873,9 @@ var app = (function () {
     		c: function create() {
     			a = element("a");
     			t = text("Source Code");
-    			attr_dev(a, "class", "text-sm text-gray-300 text-blue-500");
+    			attr_dev(a, "class", "text-sm text-blue-700 dark:text-blue-500");
     			attr_dev(a, "href", /*sourceCodeLink*/ ctx[2]);
-    			add_location(a, file$4, 15, 4, 344);
+    			add_location(a, file$4, 15, 4, 349);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -1911,9 +1911,9 @@ var app = (function () {
     		c: function create() {
     			a = element("a");
     			t = text("Live Demo");
-    			attr_dev(a, "class", "text-sm text-gray-300 text-blue-500");
+    			attr_dev(a, "class", "text-sm text-blue-700 dark:text-blue-500");
     			attr_dev(a, "href", /*liveDemoLink*/ ctx[3]);
-    			add_location(a, file$4, 21, 4, 481);
+    			add_location(a, file$4, 21, 4, 491);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -1973,8 +1973,8 @@ var app = (function () {
     			t3 = space();
     			p = element("p");
     			t4 = text(/*description*/ ctx[4]);
-    			attr_dev(p, "class", "text-sm text-gray-400");
-    			add_location(p, file$4, 26, 2, 590);
+    			attr_dev(p, "class", "text-sm text-gray-700 dark:text-gray-400");
+    			add_location(p, file$4, 26, 2, 605);
     			add_location(div, file$4, 7, 0, 175);
     		},
     		l: function claim(nodes) {
@@ -2237,10 +2237,10 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(h2, "class", "text-3xl text-gray-300");
+    			attr_dev(h2, "class", "text-3xl text-gray-900 dark:text-gray-300");
     			add_location(h2, file$3, 23, 4, 640);
     			attr_dev(div0, "class", "space-y-4");
-    			add_location(div0, file$3, 25, 4, 696);
+    			add_location(div0, file$3, 25, 4, 715);
     			attr_dev(div1, "class", "space-y-5");
     			add_location(div1, file$3, 22, 2, 611);
     		},
@@ -2490,7 +2490,7 @@ var app = (function () {
     		c: function create() {
     			path = svg_element("path");
     			attr_dev(path, "d", path_d_value = /*path*/ ctx[3]);
-    			add_location(path, file$2, 15, 6, 299);
+    			add_location(path, file$2, 15, 6, 318);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, path, anchor);
@@ -2540,9 +2540,9 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(title, file$2, 13, 4, 243);
+    			add_location(title, file$2, 13, 4, 262);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg, "class", "h-7 w-7 text-gray-300");
+    			attr_dev(svg, "class", "h-7 w-7 text-gray-900 dark:text-gray-300");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "fill", "currentColor");
     			add_location(svg, file$2, 7, 2, 103);
@@ -2856,7 +2856,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(span, "class", "text-gray-300");
+    			attr_dev(span, "class", "text-gray-900 dark:text-gray-300");
     			add_location(span, file$1, 69, 2, 7547);
     			attr_dev(div, "class", "flex flex-col sm:flex-row items-center justify-center space-x-0 space-y-4 sm:space-x-4 sm:space-y-0");
     			add_location(div, file$1, 58, 0, 7264);
@@ -3119,11 +3119,11 @@ var app = (function () {
     			t3 = space();
     			create_component(contacts.$$.fragment);
     			attr_dev(div0, "class", "py-10 flex flex-col space-y-10");
-    			add_location(div0, file, 10, 4, 347);
+    			add_location(div0, file, 10, 4, 374);
     			attr_dev(div1, "class", "px-8 sm:px-20 md:px-40 lg:px-80");
-    			add_location(div1, file, 9, 2, 297);
-    			attr_dev(main, "class", "bg-gray-900");
-    			add_location(main, file, 8, 0, 268);
+    			add_location(div1, file, 9, 2, 323);
+    			attr_dev(main, "class", "bg-gray-200 dark:bg-gray-900");
+    			add_location(main, file, 8, 0, 276);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
