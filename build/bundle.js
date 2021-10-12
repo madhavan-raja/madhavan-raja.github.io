@@ -65,6 +65,10 @@ var app = (function () {
     function empty() {
         return text('');
     }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
     function attr(node, attribute, value) {
         if (value == null)
             node.removeAttribute(attribute);
@@ -329,6 +333,19 @@ var app = (function () {
         dispatch_dev('SvelteDOMRemove', { node });
         detach(node);
     }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
+            dispose();
+        };
+    }
     function attr_dev(node, attribute, value) {
         attr(node, attribute, value);
         if (value == null)
@@ -387,6 +404,8 @@ var app = (function () {
     	let div;
     	let svg;
     	let path;
+    	let mounted;
+    	let dispose;
 
     	const block = {
     		c: function create() {
@@ -396,13 +415,13 @@ var app = (function () {
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file$a, 7, 4, 174);
+    			add_location(path, file$a, 20, 4, 500);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "class", "h-7 w-7 text-vivid");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
-    			add_location(svg, file$a, 1, 2, 37);
-    			attr_dev(div, "class", "fixed top-5 right-5");
+    			add_location(svg, file$a, 14, 2, 363);
+    			attr_dev(div, "class", "fixed top-5 right-5 cursor-pointer");
     			add_location(div, file$a, 0, 0, 0);
     		},
     		l: function claim(nodes) {
@@ -412,12 +431,19 @@ var app = (function () {
     			insert_dev(target, div, anchor);
     			append_dev(div, svg);
     			append_dev(svg, path);
+
+    			if (!mounted) {
+    				dispose = listen_dev(div, "click", /*click_handler*/ ctx[0], false, false, false);
+    				mounted = true;
+    			}
     		},
     		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -441,7 +467,19 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<DarkModeToggle> was created with unknown prop '${key}'`);
     	});
 
-    	return [];
+    	const click_handler = function () {
+    		let htmlClasses = document.querySelector("html").classList;
+
+    		if (localStorage.theme == "dark") {
+    			htmlClasses.remove("dark");
+    			localStorage.removeItem("theme");
+    		} else {
+    			htmlClasses.add("dark");
+    			localStorage.theme = "dark";
+    		}
+    	};
+
+    	return [click_handler];
     }
 
     class DarkModeToggle extends SvelteComponentDev {
@@ -3045,11 +3083,10 @@ var app = (function () {
     			t4 = space();
     			create_component(contacts.$$.fragment);
     			attr_dev(div0, "class", "py-10 flex flex-col space-y-12");
-    			add_location(div0, file, 12, 4, 473);
+    			add_location(div0, file, 26, 4, 793);
     			attr_dev(div1, "class", "px-8 sm:px-20 md:px-40 lg:px-80");
-    			add_location(div1, file, 10, 2, 398);
-    			attr_dev(main, "class", "bg-gray-200 dark:bg-gray-900 transition-colors");
-    			add_location(main, file, 9, 0, 333);
+    			add_location(div1, file, 24, 2, 718);
+    			add_location(main, file, 23, 0, 708);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3116,6 +3153,16 @@ var app = (function () {
     function instance($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('App', slots, []);
+    	let htmlClasses = document.querySelector("html").classList;
+
+    	if (localStorage.theme === "dark" || !("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    		htmlClasses.add("dark");
+    		localStorage.theme = "dark";
+    	} else {
+    		htmlClasses.remove("dark");
+    		localStorage.removeItem("theme");
+    	}
+
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -3128,8 +3175,17 @@ var app = (function () {
     		Publications,
     		CompetitiveProgramming,
     		Projects,
-    		Contacts
+    		Contacts,
+    		htmlClasses
     	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('htmlClasses' in $$props) htmlClasses = $$props.htmlClasses;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
 
     	return [];
     }
