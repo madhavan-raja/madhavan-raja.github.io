@@ -1,9 +1,10 @@
 module.exports = {
+  // mode: 'jit',
   future: {
     purgeLayersByDefault: true,
     removeDeprecatedGapUtilities: true,
   },
-  darkMode: 'media',
+  darkMode: 'class',
   theme: {
     extend: {},
   },

@@ -5,9 +5,23 @@
   import CompetitiveProgramming from "./CompetitiveProgramming.svelte";
   import Projects from "./Projects.svelte";
   import Contacts from "./Contacts.svelte";
+
+  let htmlClasses = document.querySelector("html").classList;
+
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    htmlClasses.add("dark");
+    localStorage.theme = "dark";
+  } else {
+    htmlClasses.remove("dark");
+    localStorage.removeItem("theme");
+  }
 </script>
 
-<main class="bg-gray-200 dark:bg-gray-900 transition-colors">
+<main>
   <div class="px-8 sm:px-20 md:px-40 lg:px-80">
     <DarkModeToggle />
     <div class="py-10 flex flex-col space-y-12">

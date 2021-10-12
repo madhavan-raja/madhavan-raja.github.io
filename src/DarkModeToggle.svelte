@@ -1,4 +1,17 @@
-<div class="fixed top-5 right-5">
+<div
+  on:click={function () {
+    let htmlClasses = document.querySelector("html").classList;
+
+    if (localStorage.theme == "dark") {
+      htmlClasses.remove("dark");
+      localStorage.removeItem("theme");
+    } else {
+      htmlClasses.add("dark");
+      localStorage.theme = "dark";
+    }
+  }}
+  class="fixed top-5 right-5 cursor-pointer"
+>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     class="h-7 w-7 text-vivid"
