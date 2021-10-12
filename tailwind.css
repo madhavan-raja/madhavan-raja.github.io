@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-vivid {
+  @apply text-gray-900 dark:text-gray-300 transition-colors;
+}
+
+.text-muted {
+  @apply text-gray-700 dark:text-gray-400 transition-colors;
+}
+
+.text-link {
+  @apply text-blue-700 dark:text-blue-500 transition-colors;
+}
+
+.text-item-heading {
+  @apply text-sm sm:text-lg leading-none sm:leading-none font-semibold text-vivid;
+}
+
+.text-section-heading {
+  @apply text-3xl text-vivid;
+}
+
+.item-spacing {
+  @apply space-y-5;
+}
