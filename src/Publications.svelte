@@ -16,21 +16,17 @@
 </script>
 
 {#if publications.length > 0}
-  <div class="space-y-5">
-    <h2 class="text-3xl text-gray-900 dark:text-gray-300">
-      Research Publications
-    </h2>
+  <div class="item-spacing">
+    <h2 class="text-section-heading">Research Publications</h2>
 
-    <div class="space-y-4">
-      {#each publications as publication}
-        <PublicationsCard
-          name={publication.name}
-          authors={publication.authors}
-          journal={publication.journal}
-          cover={publication.cover}
-          links={publication.links}
-        />
-      {/each}
-    </div>
+    {#each publications as publication}
+      <PublicationsCard
+        name={publication.name}
+        authors={publication.authors}
+        journal={publication.journal}
+        cover={publication.cover}
+        links={publication.links}
+      />
+    {/each}
   </div>
 {/if}

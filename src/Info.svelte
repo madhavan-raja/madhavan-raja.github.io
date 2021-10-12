@@ -5,8 +5,8 @@
 </script>
 
 <div class="space-y-5">
-  <h1 class="text-4xl text-center text-gray-900 dark:text-gray-300">{name}</h1>
-  <p class="text-gray-900 dark:text-gray-300 leading-tight text-justify">
+  <h1 class="text-4xl text-center text-vivid">{name}</h1>
+  <p class="text-vivid leading-tight text-justify">
     {about}
   </p>
 </div>

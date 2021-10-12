@@ -1,6 +1,4 @@
 <script>
-  import ItemHeading from "./ItemHeading.svelte";
-
   export let platformName;
   export let link;
   export let username;
@@ -9,12 +7,8 @@
 </script>
 
 <div>
-  <ItemHeading name={platformName} />
+  <h3 class="text-item-heading">{platformName}</h3>
 
-  <a class="text-sm font-mono text-blue-700 dark:text-blue-500" href={link}
-    >{username}</a
-  >
-  <span class="text-sm text-gray-700 dark:text-gray-400"
-    >&bull; {rating} ({ratingDescription})</span
-  >
+  <a class="text-sm font-mono text-link" href={link}>{username}</a>
+  <span class="text-sm text-muted">&bull; {rating} ({ratingDescription})</span>
 </div>

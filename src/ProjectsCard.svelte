@@ -1,28 +1,23 @@
 <script>
-  import ItemHeading from "./ItemHeading.svelte";
   export let name;
   export let pageLink, sourceCodeLink, liveDemoLink;
   export let description;
 </script>
 
 <div>
-  <ItemHeading {name} />
+  <h3 class="text-item-heading">{name}</h3>
 
   {#if pageLink}
-    <a class="text-sm text-blue-700 dark:text-blue-500" href={pageLink}>Page</a>
+    <a class="text-sm text-link" href={pageLink}>Page</a>
   {/if}
 
   {#if sourceCodeLink}
-    <a class="text-sm text-blue-700 dark:text-blue-500" href={sourceCodeLink}
-      >Source Code</a
-    >
+    <a class="text-sm text-link" href={sourceCodeLink}>Source Code</a>
   {/if}
 
   {#if liveDemoLink}
-    <a class="text-sm text-blue-700 dark:text-blue-500" href={liveDemoLink}
-      >Live Demo</a
-    >
+    <a class="text-sm text-link" href={liveDemoLink}>Live Demo</a>
   {/if}
 
-  <p class="text-sm text-gray-700 dark:text-gray-400">{description}</p>
+  <p class="text-sm text-muted">{description}</p>
 </div>
