@@ -2170,7 +2170,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (22:0) {#if projects.length > 0}
+    // (45:0) {#if projects.length > 0}
     function create_if_block(ctx) {
     	let div;
     	let h2;
@@ -2200,9 +2200,9 @@ var app = (function () {
     			}
 
     			attr_dev(h2, "class", "text-section-heading");
-    			add_location(h2, file$3, 23, 4, 643);
+    			add_location(h2, file$3, 46, 4, 1541);
     			attr_dev(div, "class", "item-spacing");
-    			add_location(div, file$3, 22, 2, 611);
+    			add_location(div, file$3, 45, 2, 1509);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2272,14 +2272,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(22:0) {#if projects.length > 0}",
+    		source: "(45:0) {#if projects.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (26:4) {#each projects as project}
+    // (49:4) {#each projects as project}
     function create_each_block$2(ctx) {
     	let projectscard;
     	let current;
@@ -2322,7 +2322,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(26:4) {#each projects as project}",
+    		source: "(49:4) {#each projects as project}",
     		ctx
     	});
 
@@ -2382,6 +2382,13 @@ var app = (function () {
 
     	let projects = [
     		{
+    			name: "Misere Tic Tac Toe AI",
+    			pageLink: null,
+    			sourceCodeLink: "https://github.com/madhavan-raja/misere-tic-tac-toe-ml",
+    			liveDemoLink: null,
+    			description: "Regression Learning for a variation of a Tic Tac Toe game."
+    		},
+    		{
     			name: "FurDB",
     			pageLink: null,
     			sourceCodeLink: "https://github.com/madhavan-raja/furtail-python",
@@ -2394,6 +2401,20 @@ var app = (function () {
     			sourceCodeLink: "https://github.com/madhavan-raja/ligh",
     			liveDemoLink: null,
     			description: "A full-stack blog website wrien in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS"
+    		},
+    		{
+    			name: "Procedural Music Generator",
+    			pageLink: null,
+    			sourceCodeLink: "https://github.com/madhavan-raja/procedural-music-generator",
+    			liveDemoLink: "https://madhavan-raja.github.io/procedural-music-generator",
+    			description: "Generates endless music from a given key and scale."
+    		},
+    		{
+    			name: "Reverse Flappy Bird",
+    			pageLink: null,
+    			sourceCodeLink: "https://github.com/madhavan-raja/reverse-flappy-bird",
+    			liveDemoLink: "https://madhavan-raja.github.io/reverse-flappy-bird",
+    			description: "A variation of the Flappy Bird game."
     		}
     	];
 
@@ -2815,9 +2836,9 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(span, "class", "text-vivid");
-    			add_location(span, file$1, 67, 2, 7504);
-    			attr_dev(div, "class", "flex flex-row items-center justify-center space-x-4 space-y-0");
+    			attr_dev(span, "class", "text-muted");
+    			add_location(span, file$1, 67, 2, 7542);
+    			attr_dev(div, "class", "flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-4 space-y-4 sm:space-y-0");
     			add_location(div, file$1, 58, 0, 7264);
     		},
     		l: function claim(nodes) {
