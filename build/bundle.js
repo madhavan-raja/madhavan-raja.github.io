@@ -415,13 +415,13 @@ var app = (function () {
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file$a, 20, 4, 500);
+    			add_location(path, file$a, 20, 4, 506);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "class", "h-7 w-7 text-vivid");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
-    			add_location(svg, file$a, 14, 2, 363);
-    			attr_dev(div, "class", "fixed top-5 right-5 cursor-pointer");
+    			add_location(svg, file$a, 14, 2, 369);
+    			attr_dev(div, "class", "fixed top-5 right-5 cursor-pointer group");
     			add_location(div, file$a, 0, 0, 0);
     		},
     		l: function claim(nodes) {
@@ -2390,9 +2390,9 @@ var app = (function () {
     		},
     		{
     			name: "Ligh",
-    			pageLink: "aa",
+    			pageLink: null,
     			sourceCodeLink: "https://github.com/madhavan-raja/ligh",
-    			liveDemoLink: "bb",
+    			liveDemoLink: null,
     			description: "A full-stack blog website wrien in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS"
     		}
     	];
