@@ -6,8 +6,8 @@
   export let links;
 </script>
 
-<div class="flex space-x-2">
-  <img class="h-36 shadow-xl" alt={journal} src={cover} />
+<div class="flex">
+  <img class="h-36 mr-5 shadow-xl" alt={journal} src={cover} />
   <div class="py-2 space-y-2">
     <h3 class="text-item-heading">{name}</h3>
     <div>
