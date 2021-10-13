@@ -616,7 +616,7 @@ var app = (function () {
     			div = element("div");
     			if_block.c();
     			attr_dev(div, "class", "mt-2 flex space-x-4");
-    			add_location(div, file$8, 19, 6, 477);
+    			add_location(div, file$8, 19, 6, 472);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -732,9 +732,9 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Link";
     			attr_dev(span, "class", "text-link");
-    			add_location(span, file$8, 21, 29, 575);
+    			add_location(span, file$8, 21, 29, 570);
     			attr_dev(a, "href", a_href_value = /*links*/ ctx[4][0]);
-    			add_location(a, file$8, 21, 10, 556);
+    			add_location(a, file$8, 21, 10, 551);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -777,9 +777,9 @@ var app = (function () {
     			t0 = text("Part ");
     			t1 = text(t1_value);
     			attr_dev(span, "class", "text-link");
-    			add_location(span, file$8, 24, 27, 696);
+    			add_location(span, file$8, 24, 27, 691);
     			attr_dev(a, "href", a_href_value = /*link*/ ctx[5]);
-    			add_location(a, file$8, 24, 12, 681);
+    			add_location(a, file$8, 24, 12, 676);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -843,20 +843,20 @@ var app = (function () {
     			t5 = text(/*journal*/ ctx[2]);
     			t6 = space();
     			if (if_block) if_block.c();
-    			attr_dev(img, "class", "h-36 shadow-xl");
+    			attr_dev(img, "class", "h-36 mr-5 shadow-xl");
     			attr_dev(img, "alt", /*journal*/ ctx[2]);
     			if (!src_url_equal(img.src, img_src_value = /*cover*/ ctx[3])) attr_dev(img, "src", img_src_value);
-    			add_location(img, file$8, 9, 2, 163);
+    			add_location(img, file$8, 9, 2, 153);
     			attr_dev(h3, "class", "text-item-heading");
-    			add_location(h3, file$8, 11, 4, 257);
+    			add_location(h3, file$8, 11, 4, 252);
     			attr_dev(p0, "class", "text-sm text-vivid");
-    			add_location(p0, file$8, 13, 6, 317);
+    			add_location(p0, file$8, 13, 6, 312);
     			attr_dev(p1, "class", "text-sm text-muted");
-    			add_location(p1, file$8, 16, 6, 386);
-    			add_location(div0, file$8, 12, 4, 304);
+    			add_location(p1, file$8, 16, 6, 381);
+    			add_location(div0, file$8, 12, 4, 299);
     			attr_dev(div1, "class", "py-2 space-y-2");
-    			add_location(div1, file$8, 10, 2, 223);
-    			attr_dev(div2, "class", "flex space-x-2");
+    			add_location(div1, file$8, 10, 2, 218);
+    			attr_dev(div2, "class", "flex");
     			add_location(div2, file$8, 8, 0, 131);
     		},
     		l: function claim(nodes) {
