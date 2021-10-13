@@ -1,10 +1,10 @@
 <script>
   import DarkModeToggle from "./DarkModeToggle.svelte";
   import Info from "./Info.svelte";
-  import Publications from "./Publications.svelte";
-  import CompetitiveProgramming from "./CompetitiveProgramming.svelte";
-  import Projects from "./Projects.svelte";
-  import Contacts from "./Contacts.svelte";
+  import Publications from "./Publications/Publications.svelte";
+  import CompetitiveProgramming from "./CompetitiveProgramming/CompetitiveProgramming.svelte";
+  import Projects from "./Projects/Projects.svelte";
+  import Contacts from "./Contacts/Contacts.svelte";
 
   let htmlClasses = document.querySelector("html").classList;
 
