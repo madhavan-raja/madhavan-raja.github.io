@@ -2672,7 +2672,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (62:2) {#each officialContacts as contact}
+    // (60:2) {#each officialContacts as contact}
     function create_each_block_1(ctx) {
     	let contactcard;
     	let current;
@@ -2713,14 +2713,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(62:2) {#each officialContacts as contact}",
+    		source: "(60:2) {#each officialContacts as contact}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (72:2) {#each unofficialContacts as contact}
+    // (70:2) {#each unofficialContacts as contact}
     function create_each_block(ctx) {
     	let contactcard;
     	let current;
@@ -2761,7 +2761,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(72:2) {#each unofficialContacts as contact}",
+    		source: "(70:2) {#each unofficialContacts as contact}",
     		ctx
     	});
 
@@ -2816,8 +2816,8 @@ var app = (function () {
     			}
 
     			attr_dev(span, "class", "text-vivid");
-    			add_location(span, file$1, 69, 2, 7547);
-    			attr_dev(div, "class", "flex flex-col sm:flex-row items-center justify-center space-x-0 space-y-4 sm:space-x-4 sm:space-y-0");
+    			add_location(span, file$1, 67, 2, 7504);
+    			attr_dev(div, "class", "flex flex-row items-center justify-center space-x-4 space-y-0");
     			add_location(div, file$1, 58, 0, 7264);
     		},
     		l: function claim(nodes) {

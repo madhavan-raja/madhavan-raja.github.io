@@ -56,9 +56,7 @@
   ];
 </script>
 
-<div
-  class="flex flex-col sm:flex-row items-center justify-center space-x-0 space-y-4 sm:space-x-4 sm:space-y-0"
->
+<div class="flex flex-row items-center justify-center space-x-4 space-y-0">
   {#each officialContacts as contact}
     <ContactCard
       name={contact.name}
