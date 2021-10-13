@@ -1,5 +1,5 @@
 <script>
-  import ProjectsCard from "../ProjectsCard.svelte";
+  import ProjectsCard from "./ProjectsCard.svelte";
   let projects = [
     {
       name: "FurDB",
@@ -10,9 +10,9 @@
     },
     {
       name: "Ligh",
-      pageLink: null,
+      pageLink: "aa",
       sourceCodeLink: "https://github.com/madhavan-raja/ligh",
-      liveDemoLink: null,
+      liveDemoLink: "bb",
       description:
         "A full-stack blog website wrien in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS",
     },

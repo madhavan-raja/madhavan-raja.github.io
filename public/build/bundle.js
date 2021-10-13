@@ -1813,7 +1813,7 @@ var app = (function () {
     		c: function create() {
     			a = element("a");
     			t = text("Page");
-    			attr_dev(a, "class", "text-sm text-link");
+    			attr_dev(a, "class", "text-sm text-link mr-5");
     			attr_dev(a, "href", /*pageLink*/ ctx[1]);
     			add_location(a, file$4, 10, 4, 200);
     		},
@@ -1850,10 +1850,10 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			a = element("a");
-    			t = text("Source Code");
-    			attr_dev(a, "class", "text-sm text-link");
+    			t = text("Source");
+    			attr_dev(a, "class", "text-sm text-link mr-5");
     			attr_dev(a, "href", /*sourceCodeLink*/ ctx[2]);
-    			add_location(a, file$4, 14, 4, 294);
+    			add_location(a, file$4, 14, 4, 299);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -1888,10 +1888,10 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			a = element("a");
-    			t = text("Live Demo");
-    			attr_dev(a, "class", "text-sm text-link");
+    			t = text("Demo");
+    			attr_dev(a, "class", "text-sm text-link mr-5");
     			attr_dev(a, "href", /*liveDemoLink*/ ctx[3]);
-    			add_location(a, file$4, 18, 4, 399);
+    			add_location(a, file$4, 18, 4, 404);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -1949,7 +1949,7 @@ var app = (function () {
     			attr_dev(h3, "class", "text-item-heading");
     			add_location(h3, file$4, 7, 2, 133);
     			attr_dev(p, "class", "text-sm text-muted");
-    			add_location(p, file$4, 21, 2, 476);
+    			add_location(p, file$4, 21, 2, 481);
     			add_location(div, file$4, 6, 0, 124);
     		},
     		l: function claim(nodes) {
@@ -2390,9 +2390,9 @@ var app = (function () {
     		},
     		{
     			name: "Ligh",
-    			pageLink: null,
+    			pageLink: "aa",
     			sourceCodeLink: "https://github.com/madhavan-raja/ligh",
-    			liveDemoLink: null,
+    			liveDemoLink: "bb",
     			description: "A full-stack blog website wrien in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS"
     		}
     	];
