@@ -10,9 +10,9 @@
     },
     {
       name: "Ligh",
-      pageLink: "aa",
+      pageLink: null,
       sourceCodeLink: "https://github.com/madhavan-raja/ligh",
-      liveDemoLink: "bb",
+      liveDemoLink: null,
       description:
         "A full-stack blog website wrien in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS",
     },
