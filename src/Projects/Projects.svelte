@@ -2,6 +2,13 @@
   import ProjectsCard from "./ProjectsCard.svelte";
   let projects = [
     {
+      name: "Misere Tic Tac Toe AI",
+      pageLink: null,
+      sourceCodeLink: "https://github.com/madhavan-raja/misere-tic-tac-toe-ml",
+      liveDemoLink: null,
+      description: "Regression Learning for a variation of a Tic Tac Toe game.",
+    },
+    {
       name: "FurDB",
       pageLink: null,
       sourceCodeLink: "https://github.com/madhavan-raja/furtail-python",
@@ -15,6 +22,22 @@
       liveDemoLink: null,
       description:
         "A full-stack blog website wrien in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS",
+    },
+    {
+      name: "Procedural Music Generator",
+      pageLink: null,
+      sourceCodeLink: "https://github.com/madhavan-raja/procedural-music-generator",
+      liveDemoLink: "https://madhavan-raja.github.io/procedural-music-generator",
+      description:
+        "Generates endless music from a given key and scale.",
+    },
+    {
+      name: "Reverse Flappy Bird",
+      pageLink: null,
+      sourceCodeLink: "https://github.com/madhavan-raja/reverse-flappy-bird",
+      liveDemoLink: "https://madhavan-raja.github.io/reverse-flappy-bird",
+      description:
+        "A variation of the Flappy Bird game.",
     },
   ];
 </script>
