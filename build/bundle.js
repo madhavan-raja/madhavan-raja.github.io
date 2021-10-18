@@ -2200,9 +2200,9 @@ var app = (function () {
     			}
 
     			attr_dev(h2, "class", "text-section-heading");
-    			add_location(h2, file$3, 46, 4, 1541);
+    			add_location(h2, file$3, 46, 4, 1542);
     			attr_dev(div, "class", "item-spacing");
-    			add_location(div, file$3, 45, 2, 1509);
+    			add_location(div, file$3, 45, 2, 1510);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2400,7 +2400,7 @@ var app = (function () {
     			pageLink: null,
     			sourceCodeLink: "https://github.com/madhavan-raja/ligh",
     			liveDemoLink: null,
-    			description: "A full-stack blog website wrien in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS"
+    			description: "A full-stack blog website written in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS"
     		},
     		{
     			name: "Procedural Music Generator",
