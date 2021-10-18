@@ -21,7 +21,7 @@
       sourceCodeLink: "https://github.com/madhavan-raja/ligh",
       liveDemoLink: null,
       description:
-        "A full-stack blog website wrien in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS",
+        "A full-stack blog website written in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS",
     },
     {
       name: "Procedural Music Generator",
