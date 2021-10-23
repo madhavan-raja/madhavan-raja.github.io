@@ -9,11 +9,18 @@
       description: "Regression Learning for a variation of a Tic Tac Toe game.",
     },
     {
+      name: "Dorian",
+      pageLink: null,
+      sourceCodeLink: "https://github.com/madhavan-raja/dorian-frontend",
+      liveDemoLink: null,
+      description: "An emulator-independent game launcher.",
+    },
+    {
       name: "FurDB",
       pageLink: null,
       sourceCodeLink: "https://github.com/madhavan-raja/furtail-python",
       liveDemoLink: null,
-      description: "A Database Management System",
+      description: "A space-efficient Database Management System",
     },
     {
       name: "Ligh",
@@ -26,18 +33,18 @@
     {
       name: "Procedural Music Generator",
       pageLink: null,
-      sourceCodeLink: "https://github.com/madhavan-raja/procedural-music-generator",
-      liveDemoLink: "https://madhavan-raja.github.io/procedural-music-generator",
-      description:
-        "Generates endless music from a given key and scale.",
+      sourceCodeLink:
+        "https://github.com/madhavan-raja/procedural-music-generator",
+      liveDemoLink:
+        "https://madhavan-raja.github.io/procedural-music-generator",
+      description: "Generates endless music from a given key and scale.",
     },
     {
       name: "Reverse Flappy Bird",
       pageLink: null,
       sourceCodeLink: "https://github.com/madhavan-raja/reverse-flappy-bird",
       liveDemoLink: "https://madhavan-raja.github.io/reverse-flappy-bird",
-      description:
-        "A variation of the Flappy Bird game.",
+      description: "A variation of the Flappy Bird game.",
     },
   ];
 </script>
