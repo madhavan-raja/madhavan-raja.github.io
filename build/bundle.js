@@ -2170,7 +2170,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (45:0) {#if projects.length > 0}
+    // (52:0) {#if projects.length > 0}
     function create_if_block(ctx) {
     	let div;
     	let h2;
@@ -2200,9 +2200,9 @@ var app = (function () {
     			}
 
     			attr_dev(h2, "class", "text-section-heading");
-    			add_location(h2, file$3, 46, 4, 1542);
+    			add_location(h2, file$3, 53, 4, 1783);
     			attr_dev(div, "class", "item-spacing");
-    			add_location(div, file$3, 45, 2, 1510);
+    			add_location(div, file$3, 52, 2, 1751);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2272,14 +2272,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(45:0) {#if projects.length > 0}",
+    		source: "(52:0) {#if projects.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (49:4) {#each projects as project}
+    // (56:4) {#each projects as project}
     function create_each_block$2(ctx) {
     	let projectscard;
     	let current;
@@ -2322,7 +2322,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(49:4) {#each projects as project}",
+    		source: "(56:4) {#each projects as project}",
     		ctx
     	});
 
@@ -2389,11 +2389,18 @@ var app = (function () {
     			description: "Regression Learning for a variation of a Tic Tac Toe game."
     		},
     		{
+    			name: "Dorian",
+    			pageLink: null,
+    			sourceCodeLink: "https://github.com/madhavan-raja/dorian-frontend",
+    			liveDemoLink: null,
+    			description: "An emulator-independent game launcher."
+    		},
+    		{
     			name: "FurDB",
     			pageLink: null,
     			sourceCodeLink: "https://github.com/madhavan-raja/furtail-python",
     			liveDemoLink: null,
-    			description: "A Database Management System"
+    			description: "A space-efficient Database Management System"
     		},
     		{
     			name: "Ligh",
