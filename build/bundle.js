@@ -592,52 +592,37 @@ var app = (function () {
 
     const file$8 = "src\\Publications\\PublicationsCard.svelte";
 
-    function get_each_context$5(ctx, list, i) {
-    	const child_ctx = ctx.slice();
-    	child_ctx[5] = list[i];
-    	child_ctx[7] = i;
-    	return child_ctx;
-    }
-
-    // (19:4) {#if links.length > 0}
+    // (19:4) {#if link}
     function create_if_block$4(ctx) {
     	let div;
-
-    	function select_block_type(ctx, dirty) {
-    		if (/*links*/ ctx[4].length === 1) return create_if_block_1$1;
-    		return create_else_block;
-    	}
-
-    	let current_block_type = select_block_type(ctx);
-    	let if_block = current_block_type(ctx);
+    	let a;
+    	let span;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			if_block.c();
+    			a = element("a");
+    			span = element("span");
+    			span.textContent = "Link";
+    			attr_dev(span, "class", "text-link");
+    			add_location(span, file$8, 20, 23, 517);
+    			attr_dev(a, "href", /*link*/ ctx[4]);
+    			add_location(a, file$8, 20, 8, 502);
     			attr_dev(div, "class", "mt-2 flex space-x-4");
-    			add_location(div, file$8, 19, 6, 472);
+    			add_location(div, file$8, 19, 6, 459);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			if_block.m(div, null);
+    			append_dev(div, a);
+    			append_dev(a, span);
     		},
     		p: function update(ctx, dirty) {
-    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
-    				if_block.p(ctx, dirty);
-    			} else {
-    				if_block.d(1);
-    				if_block = current_block_type(ctx);
-
-    				if (if_block) {
-    					if_block.c();
-    					if_block.m(div, null);
-    				}
+    			if (dirty & /*link*/ 16) {
+    				attr_dev(a, "href", /*link*/ ctx[4]);
     			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
-    			if_block.d();
     		}
     	};
 
@@ -645,163 +630,7 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(19:4) {#if links.length > 0}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (23:8) {:else}
-    function create_else_block(ctx) {
-    	let each_1_anchor;
-    	let each_value = /*links*/ ctx[4];
-    	validate_each_argument(each_value);
-    	let each_blocks = [];
-
-    	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$5(get_each_context$5(ctx, each_value, i));
-    	}
-
-    	const block = {
-    		c: function create() {
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
-    			}
-
-    			each_1_anchor = empty();
-    		},
-    		m: function mount(target, anchor) {
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
-    			}
-
-    			insert_dev(target, each_1_anchor, anchor);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*links*/ 16) {
-    				each_value = /*links*/ ctx[4];
-    				validate_each_argument(each_value);
-    				let i;
-
-    				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$5(ctx, each_value, i);
-
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(child_ctx, dirty);
-    					} else {
-    						each_blocks[i] = create_each_block$5(child_ctx);
-    						each_blocks[i].c();
-    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
-    					}
-    				}
-
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
-    				}
-
-    				each_blocks.length = each_value.length;
-    			}
-    		},
-    		d: function destroy(detaching) {
-    			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(each_1_anchor);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_else_block.name,
-    		type: "else",
-    		source: "(23:8) {:else}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (21:8) {#if links.length === 1}
-    function create_if_block_1$1(ctx) {
-    	let a;
-    	let span;
-    	let a_href_value;
-
-    	const block = {
-    		c: function create() {
-    			a = element("a");
-    			span = element("span");
-    			span.textContent = "Link";
-    			attr_dev(span, "class", "text-link");
-    			add_location(span, file$8, 21, 29, 570);
-    			attr_dev(a, "href", a_href_value = /*links*/ ctx[4][0]);
-    			add_location(a, file$8, 21, 10, 551);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, a, anchor);
-    			append_dev(a, span);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*links*/ 16 && a_href_value !== (a_href_value = /*links*/ ctx[4][0])) {
-    				attr_dev(a, "href", a_href_value);
-    			}
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(a);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_1$1.name,
-    		type: "if",
-    		source: "(21:8) {#if links.length === 1}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (24:10) {#each links as link, i}
-    function create_each_block$5(ctx) {
-    	let a;
-    	let span;
-    	let t0;
-    	let t1_value = /*i*/ ctx[7] + 1 + "";
-    	let t1;
-    	let a_href_value;
-
-    	const block = {
-    		c: function create() {
-    			a = element("a");
-    			span = element("span");
-    			t0 = text("Part ");
-    			t1 = text(t1_value);
-    			attr_dev(span, "class", "text-link");
-    			add_location(span, file$8, 24, 27, 691);
-    			attr_dev(a, "href", a_href_value = /*link*/ ctx[5]);
-    			add_location(a, file$8, 24, 12, 676);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, a, anchor);
-    			append_dev(a, span);
-    			append_dev(span, t0);
-    			append_dev(span, t1);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*links*/ 16 && a_href_value !== (a_href_value = /*link*/ ctx[5])) {
-    				attr_dev(a, "href", a_href_value);
-    			}
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(a);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_each_block$5.name,
-    		type: "each",
-    		source: "(24:10) {#each links as link, i}",
+    		source: "(19:4) {#if link}",
     		ctx
     	});
 
@@ -824,7 +653,7 @@ var app = (function () {
     	let p1;
     	let t5;
     	let t6;
-    	let if_block = /*links*/ ctx[4].length > 0 && create_if_block$4(ctx);
+    	let if_block = /*link*/ ctx[4] && create_if_block$4(ctx);
 
     	const block = {
     		c: function create() {
@@ -846,18 +675,18 @@ var app = (function () {
     			attr_dev(img, "class", "h-36 mr-5 shadow-xl");
     			attr_dev(img, "alt", /*journal*/ ctx[2]);
     			if (!src_url_equal(img.src, img_src_value = /*cover*/ ctx[3])) attr_dev(img, "src", img_src_value);
-    			add_location(img, file$8, 9, 2, 153);
+    			add_location(img, file$8, 9, 2, 152);
     			attr_dev(h3, "class", "text-item-heading");
-    			add_location(h3, file$8, 11, 4, 252);
+    			add_location(h3, file$8, 11, 4, 251);
     			attr_dev(p0, "class", "text-sm text-vivid");
-    			add_location(p0, file$8, 13, 6, 312);
+    			add_location(p0, file$8, 13, 6, 311);
     			attr_dev(p1, "class", "text-sm text-muted");
-    			add_location(p1, file$8, 16, 6, 381);
-    			add_location(div0, file$8, 12, 4, 299);
+    			add_location(p1, file$8, 16, 6, 380);
+    			add_location(div0, file$8, 12, 4, 298);
     			attr_dev(div1, "class", "py-2 space-y-2");
-    			add_location(div1, file$8, 10, 2, 218);
+    			add_location(div1, file$8, 10, 2, 217);
     			attr_dev(div2, "class", "flex");
-    			add_location(div2, file$8, 8, 0, 131);
+    			add_location(div2, file$8, 8, 0, 130);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -892,7 +721,7 @@ var app = (function () {
     			if (dirty & /*authors*/ 2) set_data_dev(t3, /*authors*/ ctx[1]);
     			if (dirty & /*journal*/ 4) set_data_dev(t5, /*journal*/ ctx[2]);
 
-    			if (/*links*/ ctx[4].length > 0) {
+    			if (/*link*/ ctx[4]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -931,8 +760,8 @@ var app = (function () {
     	let { authors } = $$props;
     	let { journal } = $$props;
     	let { cover } = $$props;
-    	let { links } = $$props;
-    	const writable_props = ['name', 'authors', 'journal', 'cover', 'links'];
+    	let { link } = $$props;
+    	const writable_props = ['name', 'authors', 'journal', 'cover', 'link'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<PublicationsCard> was created with unknown prop '${key}'`);
@@ -943,24 +772,24 @@ var app = (function () {
     		if ('authors' in $$props) $$invalidate(1, authors = $$props.authors);
     		if ('journal' in $$props) $$invalidate(2, journal = $$props.journal);
     		if ('cover' in $$props) $$invalidate(3, cover = $$props.cover);
-    		if ('links' in $$props) $$invalidate(4, links = $$props.links);
+    		if ('link' in $$props) $$invalidate(4, link = $$props.link);
     	};
 
-    	$$self.$capture_state = () => ({ name, authors, journal, cover, links });
+    	$$self.$capture_state = () => ({ name, authors, journal, cover, link });
 
     	$$self.$inject_state = $$props => {
     		if ('name' in $$props) $$invalidate(0, name = $$props.name);
     		if ('authors' in $$props) $$invalidate(1, authors = $$props.authors);
     		if ('journal' in $$props) $$invalidate(2, journal = $$props.journal);
     		if ('cover' in $$props) $$invalidate(3, cover = $$props.cover);
-    		if ('links' in $$props) $$invalidate(4, links = $$props.links);
+    		if ('link' in $$props) $$invalidate(4, link = $$props.link);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name, authors, journal, cover, links];
+    	return [name, authors, journal, cover, link];
     }
 
     class PublicationsCard extends SvelteComponentDev {
@@ -972,7 +801,7 @@ var app = (function () {
     			authors: 1,
     			journal: 2,
     			cover: 3,
-    			links: 4
+    			link: 4
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -1001,8 +830,8 @@ var app = (function () {
     			console.warn("<PublicationsCard> was created without expected prop 'cover'");
     		}
 
-    		if (/*links*/ ctx[4] === undefined && !('links' in props)) {
-    			console.warn("<PublicationsCard> was created without expected prop 'links'");
+    		if (/*link*/ ctx[4] === undefined && !('link' in props)) {
+    			console.warn("<PublicationsCard> was created without expected prop 'link'");
     		}
     	}
 
@@ -1038,11 +867,11 @@ var app = (function () {
     		throw new Error("<PublicationsCard>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	get links() {
+    	get link() {
     		throw new Error("<PublicationsCard>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	set links(value) {
+    	set link(value) {
     		throw new Error("<PublicationsCard>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -1056,7 +885,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (18:0) {#if publications.length > 0}
+    // (15:0) {#if publications.length > 0}
     function create_if_block$3(ctx) {
     	let div;
     	let h2;
@@ -1086,9 +915,9 @@ var app = (function () {
     			}
 
     			attr_dev(h2, "class", "text-section-heading");
-    			add_location(h2, file$7, 19, 4, 673);
+    			add_location(h2, file$7, 16, 4, 629);
     			attr_dev(div, "class", "item-spacing");
-    			add_location(div, file$7, 18, 2, 641);
+    			add_location(div, file$7, 15, 2, 597);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1158,14 +987,14 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(18:0) {#if publications.length > 0}",
+    		source: "(15:0) {#if publications.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (22:4) {#each publications as publication}
+    // (19:4) {#each publications as publication}
     function create_each_block$4(ctx) {
     	let publicationscard;
     	let current;
@@ -1176,7 +1005,7 @@ var app = (function () {
     				authors: /*publication*/ ctx[1].authors,
     				journal: /*publication*/ ctx[1].journal,
     				cover: /*publication*/ ctx[1].cover,
-    				links: /*publication*/ ctx[1].links
+    				link: /*publication*/ ctx[1].link
     			},
     			$$inline: true
     		});
@@ -1208,7 +1037,7 @@ var app = (function () {
     		block,
     		id: create_each_block$4.name,
     		type: "each",
-    		source: "(22:4) {#each publications as publication}",
+    		source: "(19:4) {#each publications as publication}",
     		ctx
     	});
 
@@ -1270,12 +1099,9 @@ var app = (function () {
     		{
     			name: "Violence Detection in CCTV footage using Deep Learning with Optical Flow in inconsistent weather and lighting conditions",
     			authors: "R Madhavan, Utkarsh, JV Vidhya",
-    			journal: "Springer CCIS, 2021",
-    			cover: "https://media.springernature.com/w153/springer-static/cover/book/9783030814625.jpg",
-    			links: [
-    				"https://www.springer.com/gp/book/9783030814618",
-    				"https://www.springer.com/gp/book/9783030882433"
-    			]
+    			journal: "Springer (CCIS, volume 1440), 2021",
+    			cover: "https://media.springernature.com/w306/springer-static/cover-hires/book/978-3-030-81462-5",
+    			link: "https://link.springer.com/chapter/10.1007/978-3-030-81462-5_56"
     		}
     	];
 
