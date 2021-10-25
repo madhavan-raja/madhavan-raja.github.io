@@ -3,7 +3,7 @@
   export let authors;
   export let journal;
   export let cover;
-  export let links;
+  export let link;
 </script>
 
 <div class="flex">
@@ -16,15 +16,9 @@
       </p>
       <p class="text-sm text-muted">{journal}</p>
     </div>
-    {#if links.length > 0}
+    {#if link}
       <div class="mt-2 flex space-x-4">
-        {#if links.length === 1}
-          <a href={links[0]}><span class="text-link">Link</span></a>
-        {:else}
-          {#each links as link, i}
-            <a href={link}><span class="text-link">Part {i + 1}</span></a>
-          {/each}
-        {/if}
+        <a href={link}><span class="text-link">Link</span></a>
       </div>
     {/if}
   </div>
