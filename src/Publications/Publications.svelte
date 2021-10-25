@@ -4,13 +4,10 @@
     {
       name: "Violence Detection in CCTV footage using Deep Learning with Optical Flow in inconsistent weather and lighting conditions",
       authors: "R Madhavan, Utkarsh, JV Vidhya",
-      journal: "Springer CCIS, 2021",
+      journal: "Springer (CCIS, volume 1440), 2021",
       cover:
-        "https://media.springernature.com/w153/springer-static/cover/book/9783030814625.jpg",
-      links: [
-        "https://www.springer.com/gp/book/9783030814618",
-        "https://www.springer.com/gp/book/9783030882433",
-      ],
+        "https://media.springernature.com/w306/springer-static/cover-hires/book/978-3-030-81462-5",
+      link: "https://link.springer.com/chapter/10.1007/978-3-030-81462-5_56",
     },
   ];
 </script>
@@ -25,7 +22,7 @@
         authors={publication.authors}
         journal={publication.journal}
         cover={publication.cover}
-        links={publication.links}
+        link={publication.link}
       />
     {/each}
   </div>
