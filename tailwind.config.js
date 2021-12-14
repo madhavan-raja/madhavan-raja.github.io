@@ -6,7 +6,11 @@ module.exports = {
   },
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'print': {'raw': 'print'},
+      }
+    },
   },
   variants: {
     extend: {},

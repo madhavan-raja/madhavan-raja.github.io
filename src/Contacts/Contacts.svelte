@@ -56,7 +56,9 @@
   ];
 </script>
 
-<div class="flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-4 space-y-4 sm:space-y-0">
+<div
+  class="flex flex-row print:flex-col justify-center print:justify-left space-x-4 print:space-x-0 space-y-0"
+>
   {#each officialContacts as contact}
     <ContactCard
       name={contact.name}
@@ -65,7 +67,7 @@
     />
   {/each}
 
-  <span class="text-muted">&bull;</span>
+  <span class="text-muted print:hidden">&bull;</span>
 
   {#each unofficialContacts as contact}
     <ContactCard

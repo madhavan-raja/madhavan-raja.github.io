@@ -10,7 +10,7 @@
       localStorage.theme = "dark";
     }
   }}
-  class="fixed top-5 right-5 cursor-pointer group"
+  class="fixed top-5 right-5 cursor-pointer group print:hidden"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"

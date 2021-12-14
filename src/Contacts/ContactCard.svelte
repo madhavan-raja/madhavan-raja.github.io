@@ -4,7 +4,7 @@
   export let paths;
 </script>
 
-<a href={link}>
+<a class="print:hidden" href={link}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     class="h-7 w-7 text-vivid"
@@ -17,3 +17,7 @@
     {/each}
   </svg>
 </a>
+
+<div class="hidden print:block">
+  <div class="text-vivid">{name}: <span class="text-link">{link}</span></div>
+</div>

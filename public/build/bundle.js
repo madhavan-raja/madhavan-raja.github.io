@@ -433,13 +433,13 @@ var app = (function () {
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file$a, 20, 4, 506);
+    			add_location(path, file$a, 20, 4, 519);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "class", "h-7 w-7 text-vivid");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
-    			add_location(svg, file$a, 14, 2, 369);
-    			attr_dev(div, "class", "fixed top-5 right-5 cursor-pointer group");
+    			add_location(svg, file$a, 14, 2, 382);
+    			attr_dev(div, "class", "fixed top-5 right-5 cursor-pointer group print:hidden");
     			add_location(div, file$a, 0, 0, 0);
     		},
     		l: function claim(nodes) {
@@ -614,30 +614,43 @@ var app = (function () {
     function create_if_block$4(ctx) {
     	let div;
     	let a;
-    	let span;
+    	let span0;
+    	let t1;
+    	let span1;
+    	let t2;
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			a = element("a");
-    			span = element("span");
-    			span.textContent = "Link";
-    			attr_dev(span, "class", "text-link");
-    			add_location(span, file$8, 20, 23, 517);
+    			span0 = element("span");
+    			span0.textContent = "Link";
+    			t1 = space();
+    			span1 = element("span");
+    			t2 = text(/*link*/ ctx[4]);
+    			attr_dev(span0, "class", "text-link print:hidden");
+    			add_location(span0, file$8, 20, 23, 520);
     			attr_dev(a, "href", /*link*/ ctx[4]);
-    			add_location(a, file$8, 20, 8, 502);
-    			attr_dev(div, "class", "mt-2 flex space-x-4");
-    			add_location(div, file$8, 19, 6, 459);
+    			add_location(a, file$8, 20, 8, 505);
+    			attr_dev(span1, "class", "text-link hidden print:block");
+    			add_location(span1, file$8, 21, 8, 582);
+    			attr_dev(div, "class", "mt-2 flex");
+    			add_location(div, file$8, 19, 6, 472);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, a);
-    			append_dev(a, span);
+    			append_dev(a, span0);
+    			append_dev(div, t1);
+    			append_dev(div, span1);
+    			append_dev(span1, t2);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*link*/ 16) {
     				attr_dev(a, "href", /*link*/ ctx[4]);
     			}
+
+    			if (dirty & /*link*/ 16) set_data_dev(t2, /*link*/ ctx[4]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -690,19 +703,19 @@ var app = (function () {
     			t5 = text(/*journal*/ ctx[2]);
     			t6 = space();
     			if (if_block) if_block.c();
-    			attr_dev(img, "class", "h-36 mr-5 shadow-xl");
+    			attr_dev(img, "class", "h-36 mr-5 shadow-xl print:hidden");
     			attr_dev(img, "alt", /*journal*/ ctx[2]);
     			if (!src_url_equal(img.src, img_src_value = /*cover*/ ctx[3])) attr_dev(img, "src", img_src_value);
     			add_location(img, file$8, 9, 2, 152);
     			attr_dev(h3, "class", "text-item-heading");
-    			add_location(h3, file$8, 11, 4, 251);
+    			add_location(h3, file$8, 11, 4, 264);
     			attr_dev(p0, "class", "text-sm text-vivid");
-    			add_location(p0, file$8, 13, 6, 311);
+    			add_location(p0, file$8, 13, 6, 324);
     			attr_dev(p1, "class", "text-sm text-muted");
-    			add_location(p1, file$8, 16, 6, 380);
-    			add_location(div0, file$8, 12, 4, 298);
+    			add_location(p1, file$8, 16, 6, 393);
+    			add_location(div0, file$8, 12, 4, 311);
     			attr_dev(div1, "class", "py-2 space-y-2");
-    			add_location(div1, file$8, 10, 2, 217);
+    			add_location(div1, file$8, 10, 2, 230);
     			attr_dev(div2, "class", "flex");
     			add_location(div2, file$8, 8, 0, 130);
     		},
@@ -1161,7 +1174,7 @@ var app = (function () {
     const file$6 = "src\\CompetitiveProgramming\\CompetitiveProgrammingCard.svelte";
 
     function create_fragment$6(ctx) {
-    	let div;
+    	let div1;
     	let h3;
     	let t0;
     	let t1;
@@ -1174,10 +1187,13 @@ var app = (function () {
     	let t6;
     	let t7;
     	let t8;
+    	let t9;
+    	let div0;
+    	let t10;
 
     	const block = {
     		c: function create() {
-    			div = element("div");
+    			div1 = element("div");
     			h3 = element("h3");
     			t0 = text(/*platformName*/ ctx[0]);
     			t1 = space();
@@ -1190,32 +1206,40 @@ var app = (function () {
     			t6 = text(" (");
     			t7 = text(/*ratingDescription*/ ctx[4]);
     			t8 = text(")");
+    			t9 = space();
+    			div0 = element("div");
+    			t10 = text(/*link*/ ctx[1]);
     			attr_dev(h3, "class", "text-item-heading");
     			add_location(h3, file$6, 9, 2, 159);
-    			attr_dev(a, "class", "text-sm font-mono text-link");
+    			attr_dev(a, "class", "text-sm font-mono text-link print:text-vivid");
     			attr_dev(a, "href", /*link*/ ctx[1]);
     			add_location(a, file$6, 11, 2, 214);
     			attr_dev(span, "class", "text-sm text-muted");
-    			add_location(span, file$6, 12, 2, 283);
-    			add_location(div, file$6, 8, 0, 150);
+    			add_location(span, file$6, 14, 2, 310);
+    			attr_dev(div0, "class", "text-sm text-link hidden print:block");
+    			add_location(div0, file$6, 17, 2, 401);
+    			add_location(div1, file$6, 8, 0, 150);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, h3);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, h3);
     			append_dev(h3, t0);
-    			append_dev(div, t1);
-    			append_dev(div, a);
+    			append_dev(div1, t1);
+    			append_dev(div1, a);
     			append_dev(a, t2);
-    			append_dev(div, t3);
-    			append_dev(div, span);
+    			append_dev(div1, t3);
+    			append_dev(div1, span);
     			append_dev(span, t4);
     			append_dev(span, t5);
     			append_dev(span, t6);
     			append_dev(span, t7);
     			append_dev(span, t8);
+    			append_dev(div1, t9);
+    			append_dev(div1, div0);
+    			append_dev(div0, t10);
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*platformName*/ 1) set_data_dev(t0, /*platformName*/ ctx[0]);
@@ -1227,11 +1251,12 @@ var app = (function () {
 
     			if (dirty & /*rating*/ 8) set_data_dev(t5, /*rating*/ ctx[3]);
     			if (dirty & /*ratingDescription*/ 16) set_data_dev(t7, /*ratingDescription*/ ctx[4]);
+    			if (dirty & /*link*/ 2) set_data_dev(t10, /*link*/ ctx[1]);
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div1);
     		}
     	};
 
@@ -1651,27 +1676,53 @@ var app = (function () {
     // (10:2) {#if pageLink}
     function create_if_block_2(ctx) {
     	let a;
-    	let t;
+    	let t0;
+    	let t1;
+    	let span1;
+    	let t2;
+    	let span0;
+    	let t3;
+    	let t4;
 
     	const block = {
     		c: function create() {
     			a = element("a");
-    			t = text("Page");
-    			attr_dev(a, "class", "text-sm text-link mr-5");
+    			t0 = text("Page");
+    			t1 = space();
+    			span1 = element("span");
+    			t2 = text("Page: ");
+    			span0 = element("span");
+    			t3 = text("Page: ");
+    			t4 = text(/*pageLink*/ ctx[1]);
+    			attr_dev(a, "class", "text-sm text-link mr-5 print:hidden");
     			attr_dev(a, "href", /*pageLink*/ ctx[1]);
     			add_location(a, file$4, 10, 4, 200);
+    			attr_dev(span0, "class", "text-link");
+    			add_location(span0, file$4, 12, 12, 343);
+    			attr_dev(span1, "class", "text-vivid text-sm hidden print:block");
+    			add_location(span1, file$4, 11, 4, 277);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
-    			append_dev(a, t);
+    			append_dev(a, t0);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, span1, anchor);
+    			append_dev(span1, t2);
+    			append_dev(span1, span0);
+    			append_dev(span0, t3);
+    			append_dev(span0, t4);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*pageLink*/ 2) {
     				attr_dev(a, "href", /*pageLink*/ ctx[1]);
     			}
+
+    			if (dirty & /*pageLink*/ 2) set_data_dev(t4, /*pageLink*/ ctx[1]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(a);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(span1);
     		}
     	};
 
@@ -1686,30 +1737,53 @@ var app = (function () {
     	return block;
     }
 
-    // (14:2) {#if sourceCodeLink}
+    // (17:2) {#if sourceCodeLink}
     function create_if_block_1(ctx) {
     	let a;
-    	let t;
+    	let t0;
+    	let t1;
+    	let span1;
+    	let t2;
+    	let span0;
+    	let t3;
 
     	const block = {
     		c: function create() {
     			a = element("a");
-    			t = text("Source");
-    			attr_dev(a, "class", "text-sm text-link mr-5");
+    			t0 = text("Source");
+    			t1 = space();
+    			span1 = element("span");
+    			t2 = text("Source Code: ");
+    			span0 = element("span");
+    			t3 = text(/*sourceCodeLink*/ ctx[2]);
+    			attr_dev(a, "class", "text-sm text-link mr-5 print:hidden");
     			attr_dev(a, "href", /*sourceCodeLink*/ ctx[2]);
-    			add_location(a, file$4, 14, 4, 299);
+    			add_location(a, file$4, 17, 4, 444);
+    			attr_dev(span0, "class", "text-link");
+    			add_location(span0, file$4, 21, 19, 616);
+    			attr_dev(span1, "class", "text-vivid text-sm hidden print:block");
+    			add_location(span1, file$4, 20, 4, 543);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
-    			append_dev(a, t);
+    			append_dev(a, t0);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, span1, anchor);
+    			append_dev(span1, t2);
+    			append_dev(span1, span0);
+    			append_dev(span0, t3);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*sourceCodeLink*/ 4) {
     				attr_dev(a, "href", /*sourceCodeLink*/ ctx[2]);
     			}
+
+    			if (dirty & /*sourceCodeLink*/ 4) set_data_dev(t3, /*sourceCodeLink*/ ctx[2]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(a);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(span1);
     		}
     	};
 
@@ -1717,37 +1791,60 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(14:2) {#if sourceCodeLink}",
+    		source: "(17:2) {#if sourceCodeLink}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (18:2) {#if liveDemoLink}
+    // (26:2) {#if liveDemoLink}
     function create_if_block$1(ctx) {
     	let a;
-    	let t;
+    	let t0;
+    	let t1;
+    	let span1;
+    	let t2;
+    	let span0;
+    	let t3;
 
     	const block = {
     		c: function create() {
     			a = element("a");
-    			t = text("Demo");
-    			attr_dev(a, "class", "text-sm text-link mr-5");
+    			t0 = text("Demo");
+    			t1 = space();
+    			span1 = element("span");
+    			t2 = text("Live Demo: ");
+    			span0 = element("span");
+    			t3 = text(/*liveDemoLink*/ ctx[3]);
+    			attr_dev(a, "class", "text-sm text-link mr-5 print:hidden");
     			attr_dev(a, "href", /*liveDemoLink*/ ctx[3]);
-    			add_location(a, file$4, 18, 4, 404);
+    			add_location(a, file$4, 26, 4, 715);
+    			attr_dev(span0, "class", "text-link");
+    			add_location(span0, file$4, 28, 17, 867);
+    			attr_dev(span1, "class", "text-vivid text-sm hidden print:block");
+    			add_location(span1, file$4, 27, 4, 796);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
-    			append_dev(a, t);
+    			append_dev(a, t0);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, span1, anchor);
+    			append_dev(span1, t2);
+    			append_dev(span1, span0);
+    			append_dev(span0, t3);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*liveDemoLink*/ 8) {
     				attr_dev(a, "href", /*liveDemoLink*/ ctx[3]);
     			}
+
+    			if (dirty & /*liveDemoLink*/ 8) set_data_dev(t3, /*liveDemoLink*/ ctx[3]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(a);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(span1);
     		}
     	};
 
@@ -1755,7 +1852,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(18:2) {#if liveDemoLink}",
+    		source: "(26:2) {#if liveDemoLink}",
     		ctx
     	});
 
@@ -1793,7 +1890,7 @@ var app = (function () {
     			attr_dev(h3, "class", "text-item-heading");
     			add_location(h3, file$4, 7, 2, 133);
     			attr_dev(p, "class", "text-sm text-muted");
-    			add_location(p, file$4, 21, 2, 481);
+    			add_location(p, file$4, 32, 2, 940);
     			add_location(div, file$4, 6, 0, 124);
     		},
     		l: function claim(nodes) {
@@ -2321,7 +2418,7 @@ var app = (function () {
     		c: function create() {
     			path = svg_element("path");
     			attr_dev(path, "d", path_d_value = /*path*/ ctx[3]);
-    			add_location(path, file$2, 15, 6, 296);
+    			add_location(path, file$2, 15, 6, 317);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, path, anchor);
@@ -2351,7 +2448,14 @@ var app = (function () {
     	let a;
     	let svg;
     	let title;
-    	let t;
+    	let t0;
+    	let t1;
+    	let div1;
+    	let div0;
+    	let t2;
+    	let t3;
+    	let span;
+    	let t4;
     	let each_value = /*paths*/ ctx[2];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -2365,20 +2469,34 @@ var app = (function () {
     			a = element("a");
     			svg = svg_element("svg");
     			title = svg_element("title");
-    			t = text(/*name*/ ctx[0]);
+    			t0 = text(/*name*/ ctx[0]);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(title, file$2, 13, 4, 240);
+    			t1 = space();
+    			div1 = element("div");
+    			div0 = element("div");
+    			t2 = text(/*name*/ ctx[0]);
+    			t3 = text(": ");
+    			span = element("span");
+    			t4 = text(/*link*/ ctx[1]);
+    			add_location(title, file$2, 13, 4, 261);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "class", "h-7 w-7 text-vivid");
     			attr_dev(svg, "viewBox", "0 0 24 24");
     			attr_dev(svg, "fill", "currentColor");
-    			add_location(svg, file$2, 7, 2, 103);
+    			add_location(svg, file$2, 7, 2, 124);
+    			attr_dev(a, "class", "print:hidden");
     			attr_dev(a, "href", /*link*/ ctx[1]);
     			add_location(a, file$2, 6, 0, 84);
+    			attr_dev(span, "class", "text-link");
+    			add_location(span, file$2, 21, 34, 435);
+    			attr_dev(div0, "class", "text-vivid");
+    			add_location(div0, file$2, 21, 2, 403);
+    			attr_dev(div1, "class", "hidden print:block");
+    			add_location(div1, file$2, 20, 0, 367);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2387,14 +2505,22 @@ var app = (function () {
     			insert_dev(target, a, anchor);
     			append_dev(a, svg);
     			append_dev(svg, title);
-    			append_dev(title, t);
+    			append_dev(title, t0);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(svg, null);
     			}
+
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			append_dev(div0, t2);
+    			append_dev(div0, t3);
+    			append_dev(div0, span);
+    			append_dev(span, t4);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*name*/ 1) set_data_dev(t, /*name*/ ctx[0]);
+    			if (dirty & /*name*/ 1) set_data_dev(t0, /*name*/ ctx[0]);
 
     			if (dirty & /*paths*/ 4) {
     				each_value = /*paths*/ ctx[2];
@@ -2423,12 +2549,17 @@ var app = (function () {
     			if (dirty & /*link*/ 2) {
     				attr_dev(a, "href", /*link*/ ctx[1]);
     			}
+
+    			if (dirty & /*name*/ 1) set_data_dev(t2, /*name*/ ctx[0]);
+    			if (dirty & /*link*/ 2) set_data_dev(t4, /*link*/ ctx[1]);
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(a);
     			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div1);
     		}
     	};
 
@@ -2544,7 +2675,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (60:2) {#each officialContacts as contact}
+    // (62:2) {#each officialContacts as contact}
     function create_each_block_1(ctx) {
     	let contactcard;
     	let current;
@@ -2585,14 +2716,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(60:2) {#each officialContacts as contact}",
+    		source: "(62:2) {#each officialContacts as contact}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (70:2) {#each unofficialContacts as contact}
+    // (72:2) {#each unofficialContacts as contact}
     function create_each_block(ctx) {
     	let contactcard;
     	let current;
@@ -2633,7 +2764,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(70:2) {#each unofficialContacts as contact}",
+    		source: "(72:2) {#each unofficialContacts as contact}",
     		ctx
     	});
 
@@ -2687,9 +2818,9 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(span, "class", "text-muted");
-    			add_location(span, file$1, 67, 2, 7542);
-    			attr_dev(div, "class", "flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-4 space-y-4 sm:space-y-0");
+    			attr_dev(span, "class", "text-muted print:hidden");
+    			add_location(span, file$1, 69, 2, 7546);
+    			attr_dev(div, "class", "flex flex-row print:flex-col justify-center print:justify-left space-x-4 print:space-x-0 space-y-0");
     			add_location(div, file$1, 58, 0, 7264);
     		},
     		l: function claim(nodes) {
