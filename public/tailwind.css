@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .text-vivid {
-  @apply text-gray-900 dark:text-gray-300 transition-dark-mode;
+  @apply text-neutral-900 dark:text-neutral-300 transition-dark-mode;
 }
 
 .text-muted {
-  @apply text-gray-700 dark:text-gray-400 transition-dark-mode;
+  @apply text-neutral-700 dark:text-neutral-400 transition-dark-mode;
 }
 
 .text-link {
@@ -15,7 +15,7 @@
 }
 
 .page-bg {
-  @apply bg-gray-200 dark:bg-gray-900 transition-dark-mode;
+  @apply bg-neutral-200 dark:bg-neutral-900 transition-dark-mode;
 }
 
 .text-item-heading {
