@@ -611,7 +611,7 @@ var app = (function () {
     const file$8 = "src\\Publications\\PublicationsCard.svelte";
 
     // (19:4) {#if link}
-    function create_if_block$4(ctx) {
+    function create_if_block$5(ctx) {
     	let div;
     	let a;
     	let span0;
@@ -659,7 +659,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$4.name,
+    		id: create_if_block$5.name,
     		type: "if",
     		source: "(19:4) {#if link}",
     		ctx
@@ -684,7 +684,7 @@ var app = (function () {
     	let p1;
     	let t5;
     	let t6;
-    	let if_block = /*link*/ ctx[4] && create_if_block$4(ctx);
+    	let if_block = /*link*/ ctx[4] && create_if_block$5(ctx);
 
     	const block = {
     		c: function create() {
@@ -756,7 +756,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$4(ctx);
+    					if_block = create_if_block$5(ctx);
     					if_block.c();
     					if_block.m(div1, null);
     				}
@@ -917,7 +917,7 @@ var app = (function () {
     }
 
     // (15:0) {#if publications.length > 0}
-    function create_if_block$3(ctx) {
+    function create_if_block$4(ctx) {
     	let div;
     	let h2;
     	let t1;
@@ -1016,7 +1016,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$3.name,
+    		id: create_if_block$4.name,
     		type: "if",
     		source: "(15:0) {#if publications.length > 0}",
     		ctx
@@ -1078,7 +1078,7 @@ var app = (function () {
     function create_fragment$7(ctx) {
     	let if_block_anchor;
     	let current;
-    	let if_block = /*publications*/ ctx[0].length > 0 && create_if_block$3(ctx);
+    	let if_block = /*publications*/ ctx[0].length > 0 && create_if_block$4(ctx);
 
     	const block = {
     		c: function create() {
@@ -1410,7 +1410,7 @@ var app = (function () {
     }
 
     // (22:0) {#if platforms.length > 0}
-    function create_if_block$2(ctx) {
+    function create_if_block$3(ctx) {
     	let div;
     	let h2;
     	let t1;
@@ -1509,7 +1509,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$2.name,
+    		id: create_if_block$3.name,
     		type: "if",
     		source: "(22:0) {#if platforms.length > 0}",
     		ctx
@@ -1571,7 +1571,7 @@ var app = (function () {
     function create_fragment$5(ctx) {
     	let if_block_anchor;
     	let current;
-    	let if_block = /*platforms*/ ctx[0].length > 0 && create_if_block$2(ctx);
+    	let if_block = /*platforms*/ ctx[0].length > 0 && create_if_block$3(ctx);
 
     	const block = {
     		c: function create() {
@@ -1799,7 +1799,7 @@ var app = (function () {
     }
 
     // (26:2) {#if liveDemoLink}
-    function create_if_block$1(ctx) {
+    function create_if_block$2(ctx) {
     	let a;
     	let t0;
     	let t1;
@@ -1850,7 +1850,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$1.name,
+    		id: create_if_block$2.name,
     		type: "if",
     		source: "(26:2) {#if liveDemoLink}",
     		ctx
@@ -1871,7 +1871,7 @@ var app = (function () {
     	let t5;
     	let if_block0 = /*pageLink*/ ctx[1] && create_if_block_2(ctx);
     	let if_block1 = /*sourceCodeLink*/ ctx[2] && create_if_block_1(ctx);
-    	let if_block2 = /*liveDemoLink*/ ctx[3] && create_if_block$1(ctx);
+    	let if_block2 = /*liveDemoLink*/ ctx[3] && create_if_block$2(ctx);
 
     	const block = {
     		c: function create() {
@@ -1943,7 +1943,7 @@ var app = (function () {
     				if (if_block2) {
     					if_block2.p(ctx, dirty);
     				} else {
-    					if_block2 = create_if_block$1(ctx);
+    					if_block2 = create_if_block$2(ctx);
     					if_block2.c();
     					if_block2.m(div, t4);
     				}
@@ -2112,7 +2112,7 @@ var app = (function () {
     }
 
     // (52:0) {#if projects.length > 0}
-    function create_if_block(ctx) {
+    function create_if_block$1(ctx) {
     	let div;
     	let h2;
     	let t1;
@@ -2211,7 +2211,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block.name,
+    		id: create_if_block$1.name,
     		type: "if",
     		source: "(52:0) {#if projects.length > 0}",
     		ctx
@@ -2273,7 +2273,7 @@ var app = (function () {
     function create_fragment$3(ctx) {
     	let if_block_anchor;
     	let current;
-    	let if_block = /*projects*/ ctx[0].length > 0 && create_if_block(ctx);
+    	let if_block = /*projects*/ ctx[0].length > 0 && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -2675,107 +2675,15 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (62:2) {#each officialContacts as contact}
-    function create_each_block_1(ctx) {
-    	let contactcard;
-    	let current;
-
-    	contactcard = new ContactCard({
-    			props: {
-    				name: /*contact*/ ctx[2].name,
-    				link: /*contact*/ ctx[2].link,
-    				paths: /*contact*/ ctx[2].paths
-    			},
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(contactcard.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(contactcard, target, anchor);
-    			current = true;
-    		},
-    		p: noop,
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(contactcard.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(contactcard.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(contactcard, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_each_block_1.name,
-    		type: "each",
-    		source: "(62:2) {#each officialContacts as contact}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (72:2) {#each unofficialContacts as contact}
-    function create_each_block(ctx) {
-    	let contactcard;
-    	let current;
-
-    	contactcard = new ContactCard({
-    			props: {
-    				name: /*contact*/ ctx[2].name,
-    				link: /*contact*/ ctx[2].link,
-    				paths: /*contact*/ ctx[2].paths
-    			},
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(contactcard.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(contactcard, target, anchor);
-    			current = true;
-    		},
-    		p: noop,
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(contactcard.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(contactcard.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(contactcard, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_each_block.name,
-    		type: "each",
-    		source: "(72:2) {#each unofficialContacts as contact}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function create_fragment$1(ctx) {
-    	let div;
-    	let t0;
-    	let span;
+    // (59:0) {#if officialContacts.length > 0 || unofficialContacts.length > 0}
+    function create_if_block(ctx) {
+    	let div1;
+    	let h2;
+    	let t1;
+    	let div0;
     	let t2;
+    	let span;
+    	let t4;
     	let current;
     	let each_value_1 = /*officialContacts*/ ctx[0];
     	validate_each_argument(each_value_1);
@@ -2803,47 +2711,55 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div = element("div");
+    			div1 = element("div");
+    			h2 = element("h2");
+    			h2.textContent = "Contacts";
+    			t1 = space();
+    			div0 = element("div");
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
-    			t0 = space();
+    			t2 = space();
     			span = element("span");
     			span.textContent = "•";
-    			t2 = space();
+    			t4 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
+    			attr_dev(h2, "class", "text-section-heading hidden print:block");
+    			add_location(h2, file$1, 60, 4, 7366);
     			attr_dev(span, "class", "text-muted print:hidden");
-    			add_location(span, file$1, 69, 2, 7546);
-    			attr_dev(div, "class", "flex flex-row print:flex-col justify-center print:justify-left space-x-4 print:space-x-0 space-y-0");
-    			add_location(div, file$1, 58, 0, 7264);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    			add_location(span, file$1, 72, 6, 7759);
+    			attr_dev(div0, "class", "flex flex-row print:flex-col justify-center print:justify-left space-x-4 print:space-x-0 space-y-0");
+    			add_location(div0, file$1, 61, 4, 7437);
+    			attr_dev(div1, "class", "item-spacing");
+    			add_location(div1, file$1, 59, 2, 7334);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, h2);
+    			append_dev(div1, t1);
+    			append_dev(div1, div0);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
-    				each_blocks_1[i].m(div, null);
+    				each_blocks_1[i].m(div0, null);
     			}
 
-    			append_dev(div, t0);
-    			append_dev(div, span);
-    			append_dev(div, t2);
+    			append_dev(div0, t2);
+    			append_dev(div0, span);
+    			append_dev(div0, t4);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div, null);
+    				each_blocks[i].m(div0, null);
     			}
 
     			current = true;
     		},
-    		p: function update(ctx, [dirty]) {
+    		p: function update(ctx, dirty) {
     			if (dirty & /*officialContacts*/ 1) {
     				each_value_1 = /*officialContacts*/ ctx[0];
     				validate_each_argument(each_value_1);
@@ -2859,7 +2775,7 @@ var app = (function () {
     						each_blocks_1[i] = create_each_block_1(child_ctx);
     						each_blocks_1[i].c();
     						transition_in(each_blocks_1[i], 1);
-    						each_blocks_1[i].m(div, t0);
+    						each_blocks_1[i].m(div0, t2);
     					}
     				}
 
@@ -2887,7 +2803,7 @@ var app = (function () {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(div, null);
+    						each_blocks[i].m(div0, null);
     					}
     				}
 
@@ -2929,9 +2845,152 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div1);
     			destroy_each(each_blocks_1, detaching);
     			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(59:0) {#if officialContacts.length > 0 || unofficialContacts.length > 0}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (65:6) {#each officialContacts as contact}
+    function create_each_block_1(ctx) {
+    	let contactcard;
+    	let current;
+
+    	contactcard = new ContactCard({
+    			props: {
+    				name: /*contact*/ ctx[2].name,
+    				link: /*contact*/ ctx[2].link,
+    				paths: /*contact*/ ctx[2].paths
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(contactcard.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(contactcard, target, anchor);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(contactcard.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(contactcard.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(contactcard, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(65:6) {#each officialContacts as contact}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (75:6) {#each unofficialContacts as contact}
+    function create_each_block(ctx) {
+    	let contactcard;
+    	let current;
+
+    	contactcard = new ContactCard({
+    			props: {
+    				name: /*contact*/ ctx[2].name,
+    				link: /*contact*/ ctx[2].link,
+    				paths: /*contact*/ ctx[2].paths
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(contactcard.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(contactcard, target, anchor);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(contactcard.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(contactcard.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(contactcard, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block.name,
+    		type: "each",
+    		source: "(75:6) {#each unofficialContacts as contact}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$1(ctx) {
+    	let if_block_anchor;
+    	let current;
+    	let if_block = (/*officialContacts*/ ctx[0].length > 0 || /*unofficialContacts*/ ctx[1].length > 0) && create_if_block(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (/*officialContacts*/ ctx[0].length > 0 || /*unofficialContacts*/ ctx[1].length > 0) if_block.p(ctx, dirty);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
     		}
     	};
 

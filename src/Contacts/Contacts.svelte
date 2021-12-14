@@ -56,24 +56,29 @@
   ];
 </script>
 
-<div
-  class="flex flex-row print:flex-col justify-center print:justify-left space-x-4 print:space-x-0 space-y-0"
->
-  {#each officialContacts as contact}
-    <ContactCard
-      name={contact.name}
-      link={contact.link}
-      paths={contact.paths}
-    />
-  {/each}
+{#if officialContacts.length > 0 || unofficialContacts.length > 0}
+  <div class="item-spacing">
+    <h2 class="text-section-heading hidden print:block">Contacts</h2>
+    <div
+      class="flex flex-row print:flex-col justify-center print:justify-left space-x-4 print:space-x-0 space-y-0"
+    >
+      {#each officialContacts as contact}
+        <ContactCard
+          name={contact.name}
+          link={contact.link}
+          paths={contact.paths}
+        />
+      {/each}
 
-  <span class="text-muted print:hidden">&bull;</span>
+      <span class="text-muted print:hidden">&bull;</span>
 
-  {#each unofficialContacts as contact}
-    <ContactCard
-      name={contact.name}
-      link={contact.link}
-      paths={contact.paths}
-    />
-  {/each}
-</div>
+      {#each unofficialContacts as contact}
+        <ContactCard
+          name={contact.name}
+          link={contact.link}
+          paths={contact.paths}
+        />
+      {/each}
+    </div>
+  </div>
+{/if}
