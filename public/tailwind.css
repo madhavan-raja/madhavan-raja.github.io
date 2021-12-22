@@ -2,20 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-text-base: #262b30;
+    --color-text-base-inverted: #eeeeee;
+    --color-text-muted: #424042;
+    --color-text-muted-inverted: #cccccc;
+    --color-text-link: #ff4301;
+    --color-text-link-hover: #ff6321;
+    --color-text-link-inverted: #d65a31;
+    --color-text-link-hover-inverted: #e66a41;
+    --color-fill: #dddddd;
+    --color-fill-inverted: #141313;
+  }
+}
+
 .text-vivid {
-  @apply text-neutral-900 dark:text-neutral-300 print:text-black dark:print:text-black print:no-underline transition-dark-mode;
+  @apply text-light-base dark:text-dark-base print:text-black dark:print:text-black print:no-underline transition-dark-mode;
 }
 
 .text-muted {
-  @apply text-neutral-700 dark:text-neutral-400 print:text-black dark:print:text-black transition-dark-mode;
+  @apply text-light-muted dark:text-dark-muted print:text-black dark:print:text-black transition-dark-mode;
 }
 
 .text-link {
-  @apply text-blue-700 dark:text-blue-500 print:text-blue-700 dark:print:text-blue-700 hover:text-blue-500 dark:hover:text-blue-400 transition-dark-mode print:underline;
+  @apply text-light-link dark:text-dark-link print:text-blue-700 dark:print:text-blue-700 hover:text-light-link-hover dark:hover:text-dark-link-hover transition-dark-mode print:underline;
 }
 
 .page-bg {
-  @apply bg-neutral-200 dark:bg-neutral-900 print:text-white dark:print:text-white transition-dark-mode;
+  @apply bg-light-fill dark:bg-dark-fill print:text-white dark:print:text-white transition-dark-mode;
 }
 
 .text-item-heading {
