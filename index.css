@@ -688,6 +688,42 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.hover\:text-link:hover {
+  color: var(--color-text-link);
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.hover\:text-link:hover:hover {
+  color: var(--color-text-link-hover);
+}
+
+.dark .hover\:text-link:hover {
+  color: var(--color-text-link-inverted);
+}
+
+.dark .hover\:text-link:hover:hover {
+  color: var(--color-text-link-hover-inverted);
+}
+
+@media print {
+
+  .hover\:text-link:hover {
+    --tw-text-opacity: 1;
+    color: rgb(29 78 216 / var(--tw-text-opacity));
+  }
+
+  .hover\:text-link:hover {
+    text-decoration: underline;
+  }
+
+  .dark .hover\:text-link:hover {
+    --tw-text-opacity: 1;
+    color: rgb(29 78 216 / var(--tw-text-opacity));
+  }
+}
+
 @media (min-width: 640px) {
 
   .sm\:px-20 {
