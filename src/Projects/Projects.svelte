@@ -20,7 +20,8 @@
       pageLink: null,
       sourceCodeLink: "https://github.com/madhavan-raja/furtail-python",
       liveDemoLink: null,
-      description: "A space-efficient Database Management System",
+      description:
+        "A space-efficient Database Management System. Currently WIP, the repository may not be updated in a while.",
     },
     {
       name: "Ligh",
@@ -28,7 +29,7 @@
       sourceCodeLink: "https://github.com/madhavan-raja/ligh",
       liveDemoLink: null,
       description:
-        "A full-stack blog website written in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS",
+        "A full-stack blog website written in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS.",
     },
     {
       name: "Procedural Music Generator",
