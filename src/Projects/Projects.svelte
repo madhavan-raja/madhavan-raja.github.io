@@ -9,13 +9,6 @@
       description: "Regression Learning for a variation of a Tic Tac Toe game.",
     },
     {
-      name: "Dorian",
-      pageLink: null,
-      sourceCodeLink: "https://github.com/madhavan-raja/dorian-frontend",
-      liveDemoLink: null,
-      description: "An emulator-independent game launcher.",
-    },
-    {
       name: "FurDB",
       pageLink: null,
       sourceCodeLink: "https://github.com/madhavan-raja/furtail-python",
