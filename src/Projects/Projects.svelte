@@ -13,8 +13,7 @@
       pageLink: null,
       sourceCodeLink: "https://github.com/madhavan-raja/fur",
       liveDemoLink: null,
-      description:
-        "A space-efficient Database Management System. Currently WIP, the repository may not be updated in a while.",
+      description: "A small and space-efficient Database Management System.",
     },
     {
       name: "Ligh",
