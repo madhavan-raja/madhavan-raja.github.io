@@ -11,7 +11,7 @@
     {
       name: "FurDB",
       pageLink: null,
-      sourceCodeLink: "https://github.com/madhavan-raja/furtail-python",
+      sourceCodeLink: "https://github.com/madhavan-raja/fur",
       liveDemoLink: null,
       description:
         "A space-efficient Database Management System. Currently WIP, the repository may not be updated in a while.",
