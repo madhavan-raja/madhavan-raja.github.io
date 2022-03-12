@@ -2,18 +2,18 @@
   import ProjectsCard from "./ProjectsCard.svelte";
   let projects = [
     {
+      name: "FurDB",
+      pageLink: null,
+      sourceCodeLink: "https://github.com/madhavan-raja/furdb",
+      liveDemoLink: null,
+      description: "A small and space-efficient Database Management System.",
+    },
+    {
       name: "Misere Tic Tac Toe AI",
       pageLink: null,
       sourceCodeLink: "https://github.com/madhavan-raja/misere-tic-tac-toe-ml",
       liveDemoLink: null,
       description: "Regression Learning for a variation of a Tic Tac Toe game.",
-    },
-    {
-      name: "FurDB",
-      pageLink: null,
-      sourceCodeLink: "https://github.com/madhavan-raja/fur",
-      liveDemoLink: null,
-      description: "A small and space-efficient Database Management System.",
     },
     {
       name: "Ligh",
