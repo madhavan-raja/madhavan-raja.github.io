@@ -12,21 +12,25 @@
     --color-text-link-hover: #ff6321;
     --color-text-link-inverted: #d65a31;
     --color-text-link-hover-inverted: #e66a41;
+    --color-text-highlight-fg: #cccccc;
+    --color-text-highlight-bg: #bc0ce8;
+    --color-text-highlight-fg-inverted: #cccccc;
+    --color-text-highlight-bg-inverted: #c02bed;
     --color-fill: #dddddd;
     --color-fill-inverted: #141313;
   }
 }
 
 .text-vivid {
-  @apply text-light-base dark:text-dark-base print:text-black dark:print:text-black print:no-underline transition-dark-mode;
+  @apply text-light-base dark:text-dark-base selection:text-light-highlight-fg selection:bg-light-highlight-bg dark:selection:text-dark-highlight-fg dark:selection:bg-dark-highlight-bg print:text-black dark:print:text-black print:no-underline transition-dark-mode;
 }
 
 .text-muted {
-  @apply text-light-muted dark:text-dark-muted print:text-black dark:print:text-black transition-dark-mode;
+  @apply text-light-muted dark:text-dark-muted selection:text-light-highlight-fg selection:bg-light-highlight-bg dark:selection:text-dark-highlight-fg dark:selection:bg-dark-highlight-bg print:text-black dark:print:text-black transition-dark-mode;
 }
 
 .text-link {
-  @apply text-light-link dark:text-dark-link print:text-blue-700 dark:print:text-blue-700 hover:text-light-link-hover dark:hover:text-dark-link-hover transition-dark-mode print:underline;
+  @apply text-light-link dark:text-dark-link selection:text-light-highlight-fg selection:bg-light-highlight-bg dark:selection:text-dark-highlight-fg dark:selection:bg-dark-highlight-bg print:text-blue-700 dark:print:text-blue-700 hover:text-light-link-hover dark:hover:text-dark-link-hover transition-dark-mode print:underline;
 }
 
 .page-bg {
