@@ -7,6 +7,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+           'sans': ['Poppins'],
+      },
       screens: {
         'print': {'raw': 'print'},
       },
