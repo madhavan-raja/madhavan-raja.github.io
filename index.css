@@ -383,6 +383,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     --color-text-link-hover: #ff6321;
     --color-text-link-inverted: #d65a31;
     --color-text-link-hover-inverted: #e66a41;
+    --color-text-highlight-fg: #cccccc;
+    --color-text-highlight-bg: #bc0ce8;
+    --color-text-highlight-fg-inverted: #cccccc;
+    --color-text-highlight-bg-inverted: #c02bed;
     --color-fill: #dddddd;
     --color-fill-inverted: #141313;
   }
@@ -501,8 +505,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.text-vivid *::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
+.text-vivid::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
 .dark .text-vivid {
   color: var(--color-text-base-inverted);
+}
+
+.dark .text-vivid *::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
+}
+
+.dark .text-vivid::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
 }
 
 @media print {
@@ -529,8 +553,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.text-muted *::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
+.text-muted::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
 .dark .text-muted {
   color: var(--color-text-muted-inverted);
+}
+
+.dark .text-muted *::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
+}
+
+.dark .text-muted::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
 }
 
 @media print {
@@ -553,12 +597,32 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.text-link *::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
+.text-link::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
 .text-link:hover {
   color: var(--color-text-link-hover);
 }
 
 .dark .text-link {
   color: var(--color-text-link-inverted);
+}
+
+.dark .text-link *::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
+}
+
+.dark .text-link::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
 }
 
 .dark .text-link:hover {
@@ -616,8 +680,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.text-item-heading *::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
+.text-item-heading::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
 .dark .text-item-heading {
   color: var(--color-text-base-inverted);
+}
+
+.dark .text-item-heading *::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
+}
+
+.dark .text-item-heading::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
 }
 
 @media print {
@@ -658,8 +742,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.text-section-heading *::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
+.text-section-heading::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
 .dark .text-section-heading {
   color: var(--color-text-base-inverted);
+}
+
+.dark .text-section-heading *::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
+}
+
+.dark .text-section-heading::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
 }
 
 @media print {
@@ -698,12 +802,32 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.hover\:text-link:hover *::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
+.hover\:text-link:hover::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
 .hover\:text-link:hover:hover {
   color: var(--color-text-link-hover);
 }
 
 .dark .hover\:text-link:hover {
   color: var(--color-text-link-inverted);
+}
+
+.dark .hover\:text-link:hover *::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
+}
+
+.dark .hover\:text-link:hover::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
 }
 
 .dark .hover\:text-link:hover:hover {
@@ -789,8 +913,40 @@ Ensure the default browser behavior of the `hidden` attribute.
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 
+.print\:text-vivid *::selection {
+    background-color: var(--color-text-highlight-bg);
+  }
+
+.print\:text-vivid *::selection {
+    color: var(--color-text-highlight-fg);
+  }
+
+.print\:text-vivid::selection {
+    background-color: var(--color-text-highlight-bg);
+  }
+
+.print\:text-vivid::selection {
+    color: var(--color-text-highlight-fg);
+  }
+
 .dark .print\:text-vivid {
     color: var(--color-text-base-inverted);
+  }
+
+.dark .print\:text-vivid *::selection {
+    background-color: var(--color-text-highlight-bg-inverted);
+  }
+
+.dark .print\:text-vivid *::selection {
+    color: var(--color-text-highlight-fg-inverted);
+  }
+
+.dark .print\:text-vivid::selection {
+    background-color: var(--color-text-highlight-bg-inverted);
+  }
+
+.dark .print\:text-vivid::selection {
+    color: var(--color-text-highlight-fg-inverted);
   }
 
 @media print {
