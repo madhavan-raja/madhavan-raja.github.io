@@ -49,7 +49,7 @@
         />
       {/each}
 
-      <span class="text-muted print:hidden">&bull;</span>
+      <span class="text-muted cursor-default print:hidden">&bull;</span>
 
       {#each unofficialContacts as contact}
         <ContactCard
