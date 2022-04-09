@@ -38,7 +38,7 @@
 }
 
 .text-item-heading {
-  @apply text-sm sm:text-lg leading-none sm:leading-none font-semibold text-vivid;
+  @apply text-sm sm:text-lg sm:leading-tight font-semibold;
 }
 
 .text-section-heading {
