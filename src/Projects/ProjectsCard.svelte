@@ -6,9 +6,7 @@
 
 <div class="group">
   <a href={link}>
-    <h3
-      class="text-sm sm:text-lg font-semibold text-link group-hover:text-link"
-    >
+    <h3 class="text-item-heading mb-1 text-link">
       {name}
     </h3>
 
