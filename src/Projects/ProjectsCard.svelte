@@ -1,34 +1,21 @@
 <script>
   export let name;
-  export let pageLink, sourceCodeLink, liveDemoLink;
+  export let link;
   export let description;
 </script>
 
-<div>
-  <h3 class="text-item-heading">{name}</h3>
-
-  {#if pageLink}
-    <a class="text-sm text-link mr-5 print:hidden" href={pageLink}>Page</a>
-    <span class="text-vivid text-sm hidden print:block">
-      Page: <span class="text-link">Page: {pageLink}</span>
-    </span>
-  {/if}
-
-  {#if sourceCodeLink}
-    <a class="text-sm text-link mr-5 print:hidden" href={sourceCodeLink}
-      >Source</a
+<div class="group">
+  <a href={link}>
+    <h3
+      class="text-sm sm:text-lg font-semibold text-link group-hover:text-link"
     >
-    <span class="text-vivid text-sm hidden print:block">
-      Source Code: <span class="text-link">{sourceCodeLink}</span>
-    </span>
-  {/if}
+      {name}
+    </h3>
 
-  {#if liveDemoLink}
-    <a class="text-sm text-link mr-5 print:hidden" href={liveDemoLink}>Demo</a>
-    <span class="text-vivid text-sm hidden print:block">
-      Live Demo: <span class="text-link">{liveDemoLink}</span>
-    </span>
-  {/if}
+    <p class="text-sm text-muted group-hover:text-link">{description}</p>
 
-  <p class="text-sm text-muted">{description}</p>
+    <span class="text-vivid text-sm hidden print:block">
+      Page: <span class="text-link">Page: {link}</span>
+    </span>
+  </a>
 </div>
