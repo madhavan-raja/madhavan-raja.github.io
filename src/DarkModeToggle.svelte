@@ -14,7 +14,7 @@
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="h-7 w-7 text-vivid"
+    class="h-7 w-7 text-link"
     viewBox="0 0 20 20"
     fill="currentColor"
   >
