@@ -723,6 +723,62 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.hover\:text-link:hover {
+  color: var(--color-text-link);
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.hover\:text-link:hover *::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
+.hover\:text-link:hover::selection {
+  background-color: var(--color-text-highlight-bg);
+  color: var(--color-text-highlight-fg);
+}
+
+.hover\:text-link:hover:hover {
+  color: var(--color-text-link-hover);
+}
+
+.dark .hover\:text-link:hover {
+  color: var(--color-text-link-inverted);
+}
+
+.dark .hover\:text-link:hover *::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
+}
+
+.dark .hover\:text-link:hover::selection {
+  background-color: var(--color-text-highlight-bg-inverted);
+  color: var(--color-text-highlight-fg-inverted);
+}
+
+.dark .hover\:text-link:hover:hover {
+  color: var(--color-text-link-hover-inverted);
+}
+
+@media print {
+
+  .hover\:text-link:hover {
+    --tw-text-opacity: 1;
+    color: rgb(29 78 216 / var(--tw-text-opacity));
+  }
+
+  .hover\:text-link:hover {
+    text-decoration: underline;
+  }
+
+  .dark .hover\:text-link:hover {
+    --tw-text-opacity: 1;
+    color: rgb(29 78 216 / var(--tw-text-opacity));
+  }
+}
+
 .group:hover .group-hover\:text-link {
   color: var(--color-text-link);
   transition-property: background-color, border-color, color, fill, stroke;

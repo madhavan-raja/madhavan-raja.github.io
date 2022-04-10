@@ -7,7 +7,7 @@
 <a class="print:hidden" href={link}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="h-7 w-7 text-link"
+    class="h-7 w-7 text-vivid hover:text-link"
     viewBox="0 0 24 24"
     fill="currentColor"
   >
