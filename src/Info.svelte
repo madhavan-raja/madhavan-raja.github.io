@@ -1,7 +1,7 @@
 <script>
   let name = "Madhavan Raja";
   let about =
-    "I'm a software engineer, full-stack developer, competitive programmer and a research enthusiast. I am interested in Deep Learning and Computer Vision.";
+    "Hi! I'm a software engineer, full-stack developer, competitive programmer and a research enthusiast. I am interested in Deep Learning and Computer Vision.";
 </script>
 
 <div class="space-y-5">
