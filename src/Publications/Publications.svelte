@@ -12,7 +12,7 @@
 
 {#if publications.length > 0}
   <div class="item-spacing">
-    <h2 class="text-section-heading">Research Publications</h2>
+    <h2 class="text-section-heading">Publications</h2>
 
     {#each publications as publication}
       <PublicationsCard
