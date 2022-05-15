@@ -448,10 +448,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0px * var(--tw-space-y-reverse));
 }
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
