@@ -26,6 +26,7 @@
     "tailwindcss": "^3.0.2"
   },
   "dependencies": {
+    "@sanity/client": "^3.3.0",
     "postcss": "^8.4.5",
     "sirv-cli": "^1.0.0"
   }

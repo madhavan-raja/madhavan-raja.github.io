@@ -1,13 +1,13 @@
 <script>
   import PublicationsCard from "./PublicationsCard.svelte";
-  let publications = [
-    {
-      name: "Violence Detection in CCTV footage using Deep Learning with Optical Flow in inconsistent weather and lighting conditions",
-      authors: "R Madhavan, Utkarsh, JV Vidhya",
-      journal: "Springer (CCIS, volume 1440), 2021",
-      link: "https://link.springer.com/chapter/10.1007/978-3-030-81462-5_56",
-    },
-  ];
+  import client from "../sanity";
+
+  const query = `*[_type == "publication"]{name, authors, link, journal}`;
+
+  let publications = [];
+  client.fetch(query).then((res) => {
+    publications = res;
+  });
 </script>
 
 {#if publications.length > 0}
@@ -17,7 +17,7 @@
     {#each publications as publication}
       <PublicationsCard
         name={publication.name}
-        authors={publication.authors}
+        authors={publication.authors.join(", ")}
         journal={publication.journal}
         link={publication.link}
       />
