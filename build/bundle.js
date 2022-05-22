@@ -6573,7 +6573,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (22:0) {#if platforms.length > 0}
+    // (31:0) {#if platforms.length > 0}
     function create_if_block$2(ctx) {
     	let div;
     	let h2;
@@ -6603,9 +6603,9 @@ var app = (function () {
     			}
 
     			attr_dev(h2, "class", "text-section-heading");
-    			add_location(h2, file$5, 23, 4, 579);
+    			add_location(h2, file$5, 32, 4, 813);
     			attr_dev(div, "class", "item-spacing");
-    			add_location(div, file$5, 22, 2, 547);
+    			add_location(div, file$5, 31, 2, 781);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -6675,21 +6675,21 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(22:0) {#if platforms.length > 0}",
+    		source: "(31:0) {#if platforms.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (26:4) {#each platforms as platform}
+    // (35:4) {#each platforms as platform}
     function create_each_block$3(ctx) {
     	let competitiveprogrammingcard;
     	let current;
 
     	competitiveprogrammingcard = new CompetitiveProgrammingCard({
     			props: {
-    				platformName: /*platform*/ ctx[1].name,
+    				platformName: /*platform*/ ctx[1].platform,
     				link: /*platform*/ ctx[1].link,
     				username: /*platform*/ ctx[1].username,
     				rating: /*platform*/ ctx[1].rating,
@@ -6725,7 +6725,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(26:4) {#each platforms as platform}",
+    		source: "(35:4) {#each platforms as platform}",
     		ctx
     	});
 
@@ -6785,14 +6785,14 @@ var app = (function () {
 
     	let platforms = [
     		{
-    			name: "CodeChef",
+    			platform: "CodeChef",
     			username: "flipped_flop",
     			link: "https://www.codechef.com/users/flipped_flop",
     			rating: 1862,
     			ratingDescription: "4★"
     		},
     		{
-    			name: "Codeforces",
+    			platform: "Codeforces",
     			username: "madhavan_raja",
     			link: "https://codeforces.com/profile/madhavan_raja",
     			rating: 1586,
