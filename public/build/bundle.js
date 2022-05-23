@@ -7028,11 +7028,11 @@ var app = (function () {
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[1] = list[i];
+    	child_ctx[2] = list[i];
     	return child_ctx;
     }
 
-    // (33:0) {#if projects.length > 0}
+    // (13:0) {#if projects.length > 0}
     function create_if_block$1(ctx) {
     	let div;
     	let h2;
@@ -7062,9 +7062,9 @@ var app = (function () {
     			}
 
     			attr_dev(h2, "class", "text-section-heading");
-    			add_location(h2, file$3, 34, 4, 1138);
+    			add_location(h2, file$3, 14, 4, 332);
     			attr_dev(div, "class", "item-spacing");
-    			add_location(div, file$3, 33, 2, 1106);
+    			add_location(div, file$3, 13, 2, 300);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7134,23 +7134,23 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(33:0) {#if projects.length > 0}",
+    		source: "(13:0) {#if projects.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (37:4) {#each projects as project}
+    // (17:4) {#each projects as project}
     function create_each_block$2(ctx) {
     	let projectscard;
     	let current;
 
     	projectscard = new ProjectsCard({
     			props: {
-    				name: /*project*/ ctx[1].name,
-    				link: /*project*/ ctx[1].link,
-    				description: /*project*/ ctx[1].description
+    				name: /*project*/ ctx[2].name,
+    				link: /*project*/ ctx[2].link,
+    				description: /*project*/ ctx[2].description
     			},
     			$$inline: true
     		});
@@ -7163,7 +7163,13 @@ var app = (function () {
     			mount_component(projectscard, target, anchor);
     			current = true;
     		},
-    		p: noop$1,
+    		p: function update(ctx, dirty) {
+    			const projectscard_changes = {};
+    			if (dirty & /*projects*/ 1) projectscard_changes.name = /*project*/ ctx[2].name;
+    			if (dirty & /*projects*/ 1) projectscard_changes.link = /*project*/ ctx[2].link;
+    			if (dirty & /*projects*/ 1) projectscard_changes.description = /*project*/ ctx[2].description;
+    			projectscard.$set(projectscard_changes);
+    		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(projectscard.$$.fragment, local);
@@ -7182,7 +7188,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(37:4) {#each projects as project}",
+    		source: "(17:4) {#each projects as project}",
     		ctx
     	});
 
@@ -7208,7 +7214,28 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (/*projects*/ ctx[0].length > 0) if_block.p(ctx, dirty);
+    			if (/*projects*/ ctx[0].length > 0) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*projects*/ 1) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block$1(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -7239,34 +7266,12 @@ var app = (function () {
     function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Projects', slots, []);
+    	const query = `*[_type == "project"]{name, description, link}`;
+    	let projects = [];
 
-    	let projects = [
-    		{
-    			name: "FurDB",
-    			link: "https://github.com/madhavan-raja/furdb",
-    			description: "A small and space-efficient Database Management System."
-    		},
-    		{
-    			name: "Misere Tic Tac Toe AI",
-    			link: "https://github.com/madhavan-raja/misere-tic-tac-toe-ml",
-    			description: "Regression Learning for a variation of a Tic Tac Toe game."
-    		},
-    		{
-    			name: "Ligh",
-    			link: "https://github.com/madhavan-raja/ligh",
-    			description: "A full-stack blog website written in Flask, Python, SQLAlchemy, HTML (Jinja), and CSS."
-    		},
-    		{
-    			name: "Procedural Music Generator",
-    			link: "https://github.com/madhavan-raja/procedural-music-generator",
-    			description: "Generates endless music from a given key and scale."
-    		},
-    		{
-    			name: "Reverse Flappy Bird",
-    			link: "https://github.com/madhavan-raja/reverse-flappy-bird",
-    			description: "A variation of the Flappy Bird game."
-    		}
-    	];
+    	client.fetch(query).then(res => {
+    		$$invalidate(0, projects = res);
+    	});
 
     	const writable_props = [];
 
@@ -7274,7 +7279,7 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Projects> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ ProjectsCard, projects });
+    	$$self.$capture_state = () => ({ ProjectsCard, client, query, projects });
 
     	$$self.$inject_state = $$props => {
     		if ('projects' in $$props) $$invalidate(0, projects = $$props.projects);
