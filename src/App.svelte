@@ -5,6 +5,7 @@
   import CompetitiveProgramming from "./CompetitiveProgramming/CompetitiveProgramming.svelte";
   import Projects from "./Projects/Projects.svelte";
   import Contacts from "./Contacts/Contacts.svelte";
+  import WorkExperience from "./WorkExperience/WorkExperience.svelte";
 
   let htmlClasses = document.querySelector("html").classList;
 
@@ -26,6 +27,7 @@
     <DarkModeToggle />
     <div class="py-10 flex flex-col space-y-12">
       <Info />
+      <WorkExperience />
       <Publications />
       <CompetitiveProgramming />
       <Projects />
